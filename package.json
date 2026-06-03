@@ -1,0 +1,46 @@
+{
+	"name": "@polumeyv/app-main",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "fuser -k 3000/tcp 2>/dev/null; bunx --bun vite dev",
+		"build": "bunx --bun vite build",
+		"preview": "bunx --bun vite preview",
+		"sync": "bunx svelte-kit sync",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+	},
+	"dependencies": {
+		"@polumeyv/ui": "catalog:ui",
+		"@polumeyv/lib": "catalog:infra",
+		"effect": "catalog:infra",
+		"jose": "catalog:auth",
+		"motion": "^12.38.0",
+		"motion-sv": "^0.1.12",
+		"runed": "^0.37.1",
+		"stripe": "catalog:infra"
+	},
+	"devDependencies": {
+		"@internationalized/date": "catalog:ui",
+		"@lucide/svelte": "catalog:ui",
+		"@stripe/stripe-js": "catalog:infra",
+		"@sveltejs/kit": "catalog:",
+		"@sveltejs/vite-plugin-svelte": "catalog:",
+		"@sveltejs/adapter-static": "catalog:",
+		"@tailwindcss/vite": "catalog:styling",
+		"@tanstack/table-core": "catalog:ui",
+		"bits-ui": "catalog:ui",
+		"clsx": "catalog:styling",
+		"d3-scale": "catalog:ui",
+		"layerchart": "catalog:ui",
+		"mode-watcher": "catalog:ui",
+		"mrmime": "catalog:ui",
+		"paneforge": "catalog:ui",
+		"svelte": "catalog:",
+		"svelte-check": "catalog:",
+		"svelte-sonner": "catalog:ui",
+		"tailwind-merge": "catalog:styling",
+		"tailwindcss": "catalog:styling",
+		"tw-animate-css": "catalog:styling",
+		"vite": "catalog:"
+	}
+}
