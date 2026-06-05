@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "fuser -k 3000/tcp 2>/dev/null; bunx --bun vite dev",
+		"dev": "fuser -k 3000/tcp 2>/dev/null && sleep 1; bunx --bun vite dev",
 		"build": "bunx --bun vite build",
 		"preview": "bunx --bun vite preview",
 		"sync": "bunx svelte-kit sync",

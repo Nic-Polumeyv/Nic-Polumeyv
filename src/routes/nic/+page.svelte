@@ -6,8 +6,8 @@
 	import * as Toggle from '@polumeyv/ui/toggle';
 	import { Badge } from '@polumeyv/ui/badge';
 	import { Button } from '@polumeyv/ui/button';
-	import MorphingText from '$lib/components/morphing-text.svelte';
 	import { scrollReveal } from '@polumeyv/ui/hooks';
+	import MorphingText from '$lib/components/morphing-text.svelte';
 	import MailIcon from '@lucide/svelte/icons/mail';
 	import PhoneIcon from '@lucide/svelte/icons/phone';
 	import MessageCircleIcon from '@lucide/svelte/icons/message-circle';
@@ -196,8 +196,8 @@
 		</div>
 	</section>
 
-	<section class="education relative bg-background overflow-hidden min-h-screen flex items-center py-20 sm:py-28 md:py-40 lg:py-52 px-4 sm:px-6 md:px-16 lg:px-24">
-		<div class="max-w-5xl mx-auto w-full" {@attach scrollReveal}>
+	<section class="education relative bg-background overflow-clip min-h-screen flex items-center py-20 sm:py-28 md:py-40 lg:py-52 px-4 sm:px-6 md:px-16 lg:px-24">
+		<div class="max-w-5xl mx-auto w-full" {@attach scrollReveal({ y: 40 })}>
 			<div class="flex flex-col items-center md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-20">
 				<div class="text-center md:text-left">
 					<p class="text-white/60 text-xs sm:text-sm uppercase tracking-widest mb-2">Education</p>
@@ -295,7 +295,7 @@
 	</section>
 
 	<section class="projects relative bg-background py-20 sm:py-24 md:py-40 px-4 sm:px-6 md:px-16 lg:px-24">
-		<div class="max-w-5xl mx-auto relative" {@attach scrollReveal}>
+		<div class="max-w-5xl mx-auto relative" {@attach scrollReveal({ y: 40 })}>
 			<div class="mb-10 sm:mb-12 md:mb-16 text-center md:text-left">
 				<p class="text-muted-foreground text-xs sm:text-sm uppercase tracking-widest mb-2">Work</p>
 				<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">Projects</h2>
