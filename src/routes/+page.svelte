@@ -104,7 +104,7 @@
 
 <!-- Features Sections -->
 {#each features as feature, index (feature.title)}
-	{@const isReversed = index % 2 !== 0}
+	{const isReversed = index % 2 !== 0}
 	<section class="px-4 sm:px-6 md:px-16 lg:px-24 py-16 sm:py-20 md:py-28 lg:py-36">
 		<div class="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 items-center gap-8 md:gap-12 lg:gap-20">
 			<!-- Text -->
@@ -142,7 +142,7 @@
 
 	<div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
 		{#each business as b (b.name)}
-			{@const Icon = b.icon}
+			{const Icon = b.icon}
 			<Item.Root class="p-2 sm:p-3 shadow-none">
 				<Item.Media>
 					<Icon class="size-4 sm:size-5 text-primary" />

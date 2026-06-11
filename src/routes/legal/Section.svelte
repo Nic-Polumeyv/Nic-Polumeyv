@@ -30,7 +30,7 @@
 	<Item.Separator />
 	<Item.Group>
 		{#each item.items as row, i (row.title)}
-			{@const Icon = row.icon}
+			{const Icon = row.icon}
 			<div class="flex gap-4 py-4">
 				<Item.Media variant="icon"><Icon /></Item.Media>
 				<Item.Content>

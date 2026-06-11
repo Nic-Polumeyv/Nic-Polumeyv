@@ -121,7 +121,7 @@ const importantInfo = [
 
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-16 lg:mb-20">
 		{#each policies as policy}
-			{@const Icon = policy.iconComponent}
+			{const Icon = policy.iconComponent}
 			<a href={policy.href}>
 				<Item.Root class="h-full">
 					<Item.Media variant="icon"><Icon /></Item.Media>
@@ -141,7 +141,7 @@ const importantInfo = [
 
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16 lg:mb-20">
 		{#each importantInfo as info}
-			{@const Icon = info.iconComponent}
+			{const Icon = info.iconComponent}
 			<Item.Root>
 				<Item.Media variant="icon"><Icon /></Item.Media>
 				<Item.Content>

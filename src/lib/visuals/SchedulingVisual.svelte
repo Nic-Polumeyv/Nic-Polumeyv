@@ -54,8 +54,8 @@
 			{/each}
 
 			{#each days as num, i (i)}
-				{@const isSelected = num === selected}
-				{@const isToday = num === today && !isSelected}
+				{const isSelected = num === selected}
+				{const isToday = num === today && !isSelected}
 
 				<div class="flex items-center justify-center">
 					{#if num}
