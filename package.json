@@ -17,7 +17,6 @@
 		"stripe": "catalog:infra"
 	},
 	"devDependencies": {
-		"@internationalized/date": "catalog:ui",
 		"@lucide/svelte": "catalog:ui",
 		"@stripe/stripe-js": "catalog:infra",
 		"@sveltejs/kit": "catalog:",
