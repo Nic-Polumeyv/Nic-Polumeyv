@@ -21,7 +21,7 @@
 
 		<div class="mx-auto grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
 			<Card.Root>
-				<Card.Header class="items-center text-center">
+				<Card.Header class="items-center! text-center">
 					<div class="mb-2 flex size-12 items-center justify-center rounded-full bg-primary/10">
 						<Mail class="size-6 text-primary" />
 					</div>
@@ -34,7 +34,7 @@
 			</Card.Root>
 
 			<Card.Root>
-				<Card.Header class="items-center text-center">
+				<Card.Header class="items-center! text-center">
 					<div class="mb-2 flex size-12 items-center justify-center rounded-full bg-primary/10">
 						<Phone class="size-6 text-primary" />
 					</div>

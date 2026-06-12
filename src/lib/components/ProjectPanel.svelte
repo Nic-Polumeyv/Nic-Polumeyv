@@ -112,8 +112,8 @@
 			in:panelSlide={{ duration: isMobile.current ? 500 : 600, mobile: isMobile.current, easing: cubicOut }}
 			out:panelSlide={{ duration: isMobile.current ? 350 : 400, mobile: isMobile.current, easing: cubicIn }}
 			class="absolute bg-background/95 backdrop-blur-xl border-border overflow-y-auto
-				{isMobile.current ? 'bottom-0 left-0 right-0 h-[95vh] rounded-t-3xl border-t' : 'top-0 right-0 bottom-0 w-[62vw] max-w-4xl border-l'}"
-			style={isMobile.current ? '' : 'transform-origin: right center; perspective: 800px;'}>
+				max-md:bottom-0 max-md:inset-x-0 max-md:h-[95vh] max-md:rounded-t-3xl max-md:border-t
+				md:top-0 md:right-0 md:bottom-0 md:w-[62vw] md:max-w-4xl md:border-l md:[transform-origin:right_center] md:[perspective:800px]">
 			<!-- Close button -->
 			<button
 				in:spinScale={{ duration: 600, delay: 200, easing: backOut }}
@@ -173,7 +173,7 @@
 
 				<!-- CTA -->
 				<div in:fly={{ y: 20, duration: 300, delay: 400, easing: cubicOut }} out:fade={{ duration: 150 }}>
-					<Button href={project.url} target="_blank" rel="noopener" class="gap-2">
+					<Button href={project.url} target="_blank" rel="noopener" class="gap-2!">
 						Visit Site <ExternalLinkIcon class="size-4" />
 					</Button>
 				</div>

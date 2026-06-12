@@ -14,9 +14,6 @@
 		"@polumeyv/lib": "catalog:infra",
 		"effect": "catalog:infra",
 		"jose": "catalog:auth",
-		"motion": "^12.38.0",
-		"motion-sv": "^0.1.12",
-		"runed": "^0.37.1",
 		"stripe": "catalog:infra"
 	},
 	"devDependencies": {
@@ -29,18 +26,14 @@
 		"@tailwindcss/vite": "catalog:styling",
 		"@tanstack/table-core": "catalog:ui",
 		"bits-ui": "catalog:ui",
-		"clsx": "catalog:styling",
 		"d3-scale": "catalog:ui",
 		"layerchart": "catalog:ui",
 		"mode-watcher": "catalog:ui",
-		"mrmime": "catalog:ui",
 		"paneforge": "catalog:ui",
 		"svelte": "catalog:",
 		"svelte-check": "catalog:",
 		"svelte-sonner": "catalog:ui",
-		"tailwind-merge": "catalog:styling",
 		"tailwindcss": "catalog:styling",
-		"tw-animate-css": "catalog:styling",
 		"vite": "catalog:"
 	}
 }

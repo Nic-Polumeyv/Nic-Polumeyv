@@ -143,7 +143,7 @@
 		<div
 			class="absolute inset-x-0 -top-16 bottom-0 z-0 transition-opacity duration-1000"
 			style="opacity: {step === 'entering' || step === 'greeting' ? 0 : auroraOpacity}">
-			<Aurora class="absolute inset-0 h-full z-0 bg-transparent dark:bg-transparent" />
+			<Aurora class="absolute! inset-0 h-full! z-0! bg-transparent! dark:bg-transparent!" />
 		</div>
 
 		<div class="relative z-10 w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center text-center md:text-left gap-8">
@@ -207,15 +207,15 @@
 				<img src="/uga-logo.png" alt="University of Georgia" class="h-20 sm:h-24 md:h-32 object-contain brightness-0 invert" />
 			</div>
 
-			<Item.Group class="grid grid-cols-1 gap-6">
-				<Item.Root variant="outline" class="items-start">
+			<Item.Group class="grid! grid-cols-1 gap-6">
+				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<Item.Title class="text-xl md:text-2xl">Real Estate</Item.Title>
+						<Item.Title class="text-xl! md:text-2xl!">Real Estate</Item.Title>
 						<Badge variant="outline">Major</Badge>
 						<Item.Description>Property markets, valuation, investment analysis, and mortgage lending.</Item.Description>
 					</Item.Content>
 					<Item.Separator />
-					<Item.Footer class="flex-col items-start gap-2 text-sm text-muted-foreground">
+					<Item.Footer class="flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
 							<span class="font-medium text-foreground">Mortgage & Lending</span> — Deep expertise in mortgage structures, underwriting, loan products, interest rate mechanics,
 							and the secondary mortgage market.
@@ -229,14 +229,14 @@
 						</p>
 					</Item.Footer>
 				</Item.Root>
-				<Item.Root variant="outline" class="items-start">
+				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<Item.Title class="text-xl md:text-2xl">Finance</Item.Title>
+						<Item.Title class="text-xl! md:text-2xl!">Finance</Item.Title>
 						<Badge variant="outline">Major</Badge>
 						<Item.Description>Financial systems, institutional theory, and the complex dynamics of modern markets.</Item.Description>
 					</Item.Content>
 					<Item.Separator />
-					<Item.Footer class="flex-col items-start gap-2 text-sm text-muted-foreground">
+					<Item.Footer class="flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
 							<span class="font-medium text-foreground">Consumer & Behavioral Finance</span> — Consumer science, decision-making theory, and how individual behavior shapes
 							financial markets.
@@ -251,14 +251,14 @@
 						</p>
 					</Item.Footer>
 				</Item.Root>
-				<Item.Root variant="outline" class="items-start">
+				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<Item.Title class="text-xl md:text-2xl">Computer Science</Item.Title>
+						<Item.Title class="text-xl! md:text-2xl!">Computer Science</Item.Title>
 						<Badge variant="outline">Minor</Badge>
 						<Item.Description>Low-level programming, systems architecture, and foundational computer science theory.</Item.Description>
 					</Item.Content>
 					<Item.Separator />
-					<Item.Footer class="flex-col items-start gap-2 text-sm text-muted-foreground">
+					<Item.Footer class="flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
 							<span class="font-medium text-foreground">Systems Architecture</span> — Low-level systems design, operating system concepts, hardware-software interaction, and
 							computational theory.
@@ -268,14 +268,14 @@
 						</p>
 					</Item.Footer>
 				</Item.Root>
-				<Item.Root variant="outline" class="items-start">
+				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<Item.Title class="text-xl md:text-2xl">Entrepreneurship</Item.Title>
+						<Item.Title class="text-xl! md:text-2xl!">Entrepreneurship</Item.Title>
 						<Badge variant="outline">Certificate</Badge>
 						<Item.Description>Venture creation, funding strategy, and business operations across the full startup lifecycle.</Item.Description>
 					</Item.Content>
 					<Item.Separator />
-					<Item.Footer class="flex-col items-start gap-2 text-sm text-muted-foreground">
+					<Item.Footer class="flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
 							<span class="font-medium text-foreground">Venture Creation</span> — Opportunity identification, market validation, business model design, and launching new ventures
 							from concept to product.
@@ -311,8 +311,8 @@
 							<div class="flex flex-col">
 								<Card.Header>
 									<span class="text-muted-foreground font-mono text-sm">0{i + 1}</span>
-									<Card.Title class="text-2xl md:text-3xl">{p.title}</Card.Title>
-									<Card.Description class="text-base">{p.tagline}</Card.Description>
+									<Card.Title class="text-2xl! md:text-3xl!">{p.title}</Card.Title>
+									<Card.Description class="text-base!">{p.tagline}</Card.Description>
 								</Card.Header>
 								<Card.Content class="flex-1">
 									<p class="text-muted-foreground leading-relaxed mb-4">{p.description}</p>
@@ -323,7 +323,7 @@
 									</div>
 								</Card.Content>
 								<Card.Footer>
-									<Button href={p.url} target="_blank" rel="noopener" variant="outline" class="gap-2" onclick={(e: MouseEvent) => e.stopPropagation()}>
+									<Button href={p.url} target="_blank" rel="noopener" variant="outline" class="gap-2!" onclick={(e: MouseEvent) => e.stopPropagation()}>
 										Visit Site <ArrowRightIcon class="size-4" />
 									</Button>
 								</Card.Footer>
@@ -339,19 +339,19 @@
 		<WalkingBorder duration={10}>
 			<Card.Root class="w-full max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl text-center">
 				<Card.Header>
-					<Card.Title class="text-2xl md:text-3xl lg:text-4xl">Let's Connect</Card.Title>
+					<Card.Title class="text-2xl! md:text-3xl! lg:text-4xl!">Let's Connect</Card.Title>
 					<Card.Description class="text-sm md:text-base">Follow my work, collaborate, or let's build something together</Card.Description>
 				</Card.Header>
 				<Card.Content class="flex flex-wrap justify-center gap-3 sm:gap-4">
-					<Button href="mailto:nic@polumeyv.com" variant="outline" size="icon" class="size-10 md:size-12"><MailIcon class="size-5 md:size-6" /></Button>
-					<Button href="tel:7625249497" variant="outline" size="icon" class="size-10 md:size-12"><PhoneIcon class="size-5 md:size-6" /></Button>
-					<Button href="sms:7625249497" variant="outline" size="icon" class="size-10 md:size-12"><MessageCircleIcon class="size-5 md:size-6" /></Button>
-					<Button href="https://github.com" variant="outline" size="icon" class="size-10 md:size-12">
+					<Button href="mailto:nic@polumeyv.com" variant="outline" size="icon" class="size-10! md:size-12!"><MailIcon class="size-5 md:size-6" /></Button>
+					<Button href="tel:7625249497" variant="outline" size="icon" class="size-10! md:size-12!"><PhoneIcon class="size-5 md:size-6" /></Button>
+					<Button href="sms:7625249497" variant="outline" size="icon" class="size-10! md:size-12!"><MessageCircleIcon class="size-5 md:size-6" /></Button>
+					<Button href="https://github.com" variant="outline" size="icon" class="size-10! md:size-12!">
 						<svg class="size-5 md:size-6" viewBox="0 0 24 24" fill="currentColor"
 							><path
 								d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" /></svg>
 					</Button>
-					<Button href="https://www.linkedin.com/in/nic-/" variant="outline" size="icon" class="size-10 md:size-12">
+					<Button href="https://www.linkedin.com/in/nic-/" variant="outline" size="icon" class="size-10! md:size-12!">
 						<svg class="size-5 md:size-6" viewBox="0 0 24 24" fill="currentColor"
 							><path
 								d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>

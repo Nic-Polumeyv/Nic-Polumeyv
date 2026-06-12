@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
+	import { tick } from 'svelte';
 	import type { Snippet } from 'svelte';
 
 	const CONFIG = {
@@ -130,6 +130,20 @@
 		lastTimestamp = timestamp;
 		animationTime += delta;
 
+		// Rect reads happen before this frame's SVG attribute writes — reading after
+		// them forces a synchronous layout against our own dirty state every frame.
+		let footX = 0;
+		let footY = 0;
+		let footDue = false;
+		if (showFootprints && timestamp - lastFootprintTime > CONFIG.footprints.interval && containerRef && walkerReady) {
+			lastFootprintTime = timestamp;
+			const fr = footMarkerRef.getBoundingClientRect();
+			const cr = containerRef.getBoundingClientRect();
+			footX = fr.left - cr.left;
+			footY = fr.top - cr.top;
+			footDue = true;
+		}
+
 		const p = CONFIG.walk;
 		const t = ((animationTime / p.cycleTime) % 1) * Math.PI * 2;
 
@@ -181,19 +195,11 @@
 		setLine(frontArmUpperRef, cx, shoulderY, frontArm.elbowX, frontArm.elbowY);
 		setLine(frontArmLowerRef, frontArm.elbowX, frontArm.elbowY, frontArm.handX, frontArm.handY);
 
-		// Footprint logic: same frame loop, throttled by time
-		if (showFootprints && timestamp - lastFootprintTime > CONFIG.footprints.interval && containerRef && walkerReady) {
-			lastFootprintTime = timestamp;
-			const fr = footMarkerRef.getBoundingClientRect();
-			const cr = containerRef.getBoundingClientRect();
-			const x = fr.left - cr.left;
-			const y = fr.top - cr.top;
-			const dist = Math.hypot(x - lastFootprintX, y - lastFootprintY);
-			if (dist > CONFIG.footprints.minDistance) {
-				placeFootprint(x, y);
-				lastFootprintX = x;
-				lastFootprintY = y;
-			}
+		// Footprint placement: coordinates were read at the top of the frame
+		if (footDue && Math.hypot(footX - lastFootprintX, footY - lastFootprintY) > CONFIG.footprints.minDistance) {
+			placeFootprint(footX, footY);
+			lastFootprintX = footX;
+			lastFootprintY = footY;
 		}
 
 		animationFrameId = requestAnimationFrame(animate);
@@ -234,7 +240,8 @@
 		offsetPath = generatePath(rect.width, rect.height, borderRadius);
 	}
 
-	onMount(() => {
+	// Attachment reads no reactive state synchronously, so it runs once per mount
+	function setup() {
 		tick().then(() => setTimeout(updatePath, CONFIG.initDelay));
 
 		// Debounced resize observer — avoid restarting offset-path mid-frame on continuous drag
@@ -252,11 +259,12 @@
 			cancelAnimationFrame(animationFrameId);
 			clearTimeout(resizeTimer);
 		};
-	});
+	}
 </script>
 
 <div
 	bind:this={containerRef}
+	{@attach setup}
 	class="walking-border-container"
 	style="
 		--walk-duration: {duration}s;

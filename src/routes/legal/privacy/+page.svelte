@@ -225,7 +225,7 @@
 		</Item.Header>
 		<Item.Content>
 			<div class="text-sm space-y-1">
-				<Button variant="link" href="mailto:help@polumeyv.com" class="p-0 h-auto">help@polumeyv.com</Button>
+				<Button variant="link" href="mailto:help@polumeyv.com" class="p-0! h-auto!">help@polumeyv.com</Button>
 				<p>Polumeyv LLC</p>
 				<p>Athens-Clarke County, Georgia</p>
 			</div>

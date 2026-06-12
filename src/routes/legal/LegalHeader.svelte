@@ -10,6 +10,6 @@
 </svelte:head>
 
 <Item.Header class="mb-8">
-	<Item.Title class="text-2xl md:text-3xl text-primary">{title}</Item.Title>
+	<Item.Title class="text-2xl! md:text-3xl! text-primary">{title}</Item.Title>
 	<Item.Description>Effective Date: {date}</Item.Description>
 </Item.Header>

@@ -143,12 +143,12 @@
 	<div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
 		{#each business as b (b.name)}
 			{const Icon = b.icon}
-			<Item.Root class="p-2 sm:p-3 shadow-none">
+			<Item.Root class="p-2! sm:p-3! shadow-none">
 				<Item.Media>
 					<Icon class="size-4 sm:size-5 text-primary" />
 				</Item.Media>
 				<Item.Content>
-					<Item.Title class="text-xs sm:text-sm">{b.name}</Item.Title>
+					<Item.Title class="text-xs! sm:text-sm!">{b.name}</Item.Title>
 				</Item.Content>
 			</Item.Root>
 		{/each}

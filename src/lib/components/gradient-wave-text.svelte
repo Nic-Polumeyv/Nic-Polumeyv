@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { cn } from '@polumeyv/ui/utils';
-	import { useInView } from 'motion-sv';
 	import type { Snippet } from 'svelte';
 
 	type Align = 'left' | 'center' | 'right';
@@ -46,22 +45,29 @@
 		role?: string;
 	} = $props();
 
-	let element = $state<HTMLDivElement | null>(null);
-	let view = useInView(
-		() => (triggerOnView ? element : null)!,
-		() => ({ once, amount: 0.1 }) as any,
-	);
+	let inView = $state(false);
 
-	let rafId = 0;
-	let gradientIndex = -25;
-	let cyclesDone = 0;
-	let finished = false;
-	let started = false;
-	let startAt = 0;
+	// Native IntersectionObserver (replaces motion-sv's useInView): enter sets true and, with
+	// `once`, stops observing; leave resets only when `once` is false.
+	function observe(node: HTMLElement) {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry!.isIntersecting) {
+					inView = true;
+					if (once) observer.disconnect();
+				} else if (!once) {
+					inView = false;
+				}
+			},
+			{ threshold: 0.1 },
+		);
+		observer.observe(node);
+		return () => observer.disconnect();
+	}
 
 	const cycles = $derived(repeat ? 0 : 1);
 	const resolvedColors = $derived(customColors?.length ? customColors : defaultColors);
-	const isInView = $derived(triggerOnView ? view.current : true);
+	const isInView = $derived(triggerOnView ? inView : true);
 	const justifyContent = $derived(align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center');
 
 	const stops = $derived.by(() => {
@@ -108,92 +114,82 @@
 		].join('; '),
 	);
 
-	function setGradientIndex(value: number) {
-		gradientIndex = value;
-		element?.style.setProperty('--gi', String(value));
-	}
+	// Attachment owns the whole wave lifecycle: re-attached when `isInView` flips
+	// (via the conditional in the template) or `delay` changes; cleanup cancels the loop.
+	function wave() {
+		return (node: HTMLElement) => {
+			const range = 200;
+			let gi = -25;
+			let cyclesDone = 0;
+			let started = false;
+			let rafId = 0;
+			const startAt = performance.now() + Math.max(0, delay * 1000);
+			let last = performance.now();
 
-	$effect(() => {
-		if (!element) return;
-		setGradientIndex(-25);
-	});
+			const setGi = (value: number) => {
+				gi = value;
+				node.style.setProperty('--gi', String(value));
+			};
 
-	$effect(() => {
-		if (!element || !isInView) return;
-		gradientIndex = -25;
-		cyclesDone = 0;
-		finished = false;
-		started = false;
-		startAt = performance.now() + Math.max(0, delay * 1000);
-		setGradientIndex(-25);
-	});
+			setGi(-25);
 
-	$effect(() => {
-		if (!element || !isInView) return;
-		const node = element;
-		const range = 200;
-		let last = performance.now();
-
-		const tick = (now: number) => {
-			if (finished || node !== element) {
-				return;
-			}
-
-			if (!started) {
-				if (now >= startAt) {
-					started = true;
-					last = now;
-				} else {
-					rafId = requestAnimationFrame(tick);
-					return;
-				}
-			}
-
-			const delta = Math.min(64, now - last);
-			last = now;
-
-			if (!paused) {
-				const increment = (delta * speed) / 16.6667;
-				let next = gradientIndex + increment;
-
-				if (cycles === 0) {
-					if (next >= range) {
-						next %= range;
-					}
-
-					setGradientIndex(next);
-				} else {
-					while (next >= range && cyclesDone < cycles) {
-						next -= range;
-						cyclesDone += 1;
-					}
-
-					if (cyclesDone >= cycles) {
-						setGradientIndex(range);
-						finished = true;
+			const tick = (now: number) => {
+				if (!started) {
+					if (now >= startAt) {
+						started = true;
+						last = now;
+					} else {
+						rafId = requestAnimationFrame(tick);
 						return;
 					}
-
-					setGradientIndex(next);
 				}
-			}
+
+				const delta = Math.min(64, now - last);
+				last = now;
+
+				if (!paused) {
+					const increment = (delta * speed) / 16.6667;
+					let next = gi + increment;
+
+					if (cycles === 0) {
+						if (next >= range) {
+							next %= range;
+						}
+
+						setGi(next);
+					} else {
+						while (next >= range && cyclesDone < cycles) {
+							next -= range;
+							cyclesDone += 1;
+						}
+
+						if (cyclesDone >= cycles) {
+							setGi(range);
+							return;
+						}
+
+						setGi(next);
+					}
+				}
+
+				rafId = requestAnimationFrame(tick);
+			};
 
 			rafId = requestAnimationFrame(tick);
+
+			return () => cancelAnimationFrame(rafId);
 		};
-
-		rafId = requestAnimationFrame(tick);
-
-		return () => cancelAnimationFrame(rafId);
-	});
+	}
 </script>
 
 <div
-	bind:this={element}
 	class={cn('flex h-full w-full items-center [--gradient-wave-base:rgb(29,29,31)] dark:[--gradient-wave-base:rgb(255,255,255)]', className)}
 	style={rootStyle}
 	aria-label={ariaLabel}
 	role={role ?? (ariaLabel ? 'img' : undefined)}
-	{...props}>
+	{...props}
+	{@attach triggerOnView && observe}
+	{@attach isInView && wave()}>
 	<span style={textStyle}>
 		{@render children?.()}
 	</span>

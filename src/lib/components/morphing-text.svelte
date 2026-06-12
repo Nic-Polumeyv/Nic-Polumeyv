@@ -22,14 +22,15 @@
 		onComplete?: () => void;
 	} = $props();
 
-	const morphTime = morphDuration;
 	const cooldownTime = 0.5;
 
-	let textIndex = $state(0);
-	let morph = $state(0);
-	let cooldown = $state(initialDelay);
-	let time = $state(new Date());
-	let done = $state(false);
+	// Per-frame animation values are plain locals — only `morphing` drives the template,
+	// everything else is written via direct DOM access in the rAF loop.
+	let textIndex = 0;
+	let morph = 0;
+	let cooldown = 0;
+	let lastTime = 0;
+	let done = false;
 	let morphing = $state(false);
 	let running = false;
 
@@ -48,8 +49,10 @@
 		text1Ref.style.filter = `blur(${Math.min(8 / invertedFraction - 8, 100)}px)`;
 		text1Ref.style.opacity = `${Math.pow(invertedFraction, 0.4) * 100}%`;
 
-		text1Ref.textContent = texts[textIndex % texts.length]!;
-		text2Ref.textContent = texts[(textIndex + 1) % texts.length]!;
+		const t1 = texts[textIndex % texts.length]!;
+		const t2 = texts[(textIndex + 1) % texts.length]!;
+		if (text1Ref.textContent !== t1) text1Ref.textContent = t1;
+		if (text2Ref.textContent !== t2) text2Ref.textContent = t2;
 	};
 
 	const doMorph = () => {
@@ -57,7 +60,7 @@
 		cooldown = 0;
 		morphing = true;
 
-		let fraction = morph / morphTime;
+		let fraction = morph / morphDuration;
 
 		if (fraction > 1) {
 			cooldown = cooldownTime;
@@ -100,13 +103,12 @@
 		text2Ref.style.filter = 'none';
 	}
 
-	const animate = () => {
+	const animate = (now: number) => {
 		if (done) return;
 		animationFrameId = requestAnimationFrame(animate);
 
-		const newTime = new Date();
-		const dt = (newTime.getTime() - time.getTime()) / 1000;
-		time = newTime;
+		const dt = (now - lastTime) / 1000;
+		lastTime = now;
 
 		cooldown -= dt;
 
@@ -121,8 +123,8 @@
 		if (running || done) return;
 		running = true;
 		cooldown = initialDelay;
-		time = new Date();
-		animate();
+		lastTime = performance.now();
+		animate(lastTime);
 	}
 
 	$effect(() => {
