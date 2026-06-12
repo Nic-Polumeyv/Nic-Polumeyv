@@ -25,7 +25,7 @@
     dark:[background-image:var(--dark-gradient),var(--aurora-dark)]
     bg-size-[300%,200%]
     bg-position-[50%_50%,50%_50%]
-    filter blur-[10px] invert dark:invert-0
+    blur-[10px] invert dark:invert-0
     after:content-[""] after:absolute after:inset-0
     after:[background-image:var(--white-gradient),var(--aurora-light)]
     after:dark:[background-image:var(--dark-gradient),var(--aurora-dark)]
