@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Card from '@polumeyv/ui/card';
-	import { Button } from '@polumeyv/ui/button';
+	import * as Card from '@polumeyv/ui/components/card';
+	import { Button } from '@polumeyv/ui/components/button';
 	import Mail from '@lucide/svelte/icons/mail';
 	import Phone from '@lucide/svelte/icons/phone';
 </script>

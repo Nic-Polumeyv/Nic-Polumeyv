@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '@polumeyv/ui/button';
+	import { Button } from '@polumeyv/ui/components/button';
 	import Shield from '@lucide/svelte/icons/shield';
 	import BarChart2 from '@lucide/svelte/icons/bar-chart-2';
 	import Settings from '@lucide/svelte/icons/settings';

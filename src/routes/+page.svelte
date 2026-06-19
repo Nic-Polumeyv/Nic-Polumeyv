@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Item from '@polumeyv/ui/item';
-	import { Button } from '@polumeyv/ui/button';
+	import * as Item from '@polumeyv/ui/components/item';
+	import { Button } from '@polumeyv/ui/components/button';
 	import Scale from '@lucide/svelte/icons/scale';
 	import Scissors from '@lucide/svelte/icons/scissors';
 	import UtensilsCrossed from '@lucide/svelte/icons/utensils-crossed';
@@ -148,7 +148,7 @@
 					<Icon class="size-4 sm:size-5 text-primary" />
 				</Item.Media>
 				<Item.Content>
-					<Item.Title class="text-xs! sm:text-sm!">{b.name}</Item.Title>
+					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xs! sm:text-sm!">{b.name}</div>
 				</Item.Content>
 			</Item.Root>
 		{/each}

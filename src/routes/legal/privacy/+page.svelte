@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Item from '@polumeyv/ui/item';
-	import { Button } from '@polumeyv/ui/button';
+	import * as Item from '@polumeyv/ui/components/item';
+	import { Button } from '@polumeyv/ui/components/button';
 	import { resolve } from '$app/paths';
 	import User from '@lucide/svelte/icons/user';
 	import Database from '@lucide/svelte/icons/database';
@@ -64,9 +64,9 @@
 		}} />
 
 	<Item.Root>
-		<Item.Header>
-			<Item.Title>How We Use Your Information</Item.Title>
-		</Item.Header>
+		<div class="flex basis-full items-center justify-between gap-2">
+			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">How We Use Your Information</div>
+		</div>
 		<Item.Content>
 			<ul class="list-disc list-inside space-y-1 text-sm">
 				<li>To provide and maintain our services</li>
@@ -117,10 +117,10 @@
 		}} />
 
 	<Item.Root>
-		<Item.Header>
-			<Item.Title>Data Security</Item.Title>
+		<div class="flex basis-full items-center justify-between gap-2">
+			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">Data Security</div>
 			<Item.Description>We implement appropriate technical and organizational measures to protect your personal information, including:</Item.Description>
-		</Item.Header>
+		</div>
 		<Item.Content>
 			<ul class="list-disc list-inside space-y-1 text-sm mb-4">
 				<li>Encryption of sensitive data in transit and at rest</li>
@@ -180,10 +180,10 @@
 		id="your-rights" />
 
 	<Item.Root id="data-retention">
-		<Item.Header>
-			<Item.Title>Data Retention</Item.Title>
+		<div class="flex basis-full items-center justify-between gap-2">
+			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">Data Retention</div>
 			<Item.Description>We retain your personal information for as long as necessary to fulfill the purposes for which it was collected, including:</Item.Description>
-		</Item.Header>
+		</div>
 		<Item.Content>
 			<ul class="list-disc list-inside space-y-1 text-sm">
 				<li>Active accounts: Retained while your account remains active</li>
@@ -219,10 +219,10 @@
 		material changes by posting the new Privacy Policy on this page. We encourage you to review this Privacy Policy periodically for any changes.</Prose>
 
 	<Item.Root>
-		<Item.Header>
-			<Item.Title>Contact Us</Item.Title>
+		<div class="flex basis-full items-center justify-between gap-2">
+			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">Contact Us</div>
 			<Item.Description>If you have any questions or concerns about our Privacy Policy or our data practices, please contact us at:</Item.Description>
-		</Item.Header>
+		</div>
 		<Item.Content>
 			<div class="text-sm space-y-1">
 				<Button variant="link" href="mailto:help@polumeyv.com" class="p-0! h-auto!">help@polumeyv.com</Button>

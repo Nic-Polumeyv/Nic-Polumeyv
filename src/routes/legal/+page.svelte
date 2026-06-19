@@ -1,6 +1,6 @@
 <script lang="ts">
-import * as Item from '@polumeyv/ui/item';
-import { Button } from '@polumeyv/ui/button';
+import * as Item from '@polumeyv/ui/components/item';
+import { Button } from '@polumeyv/ui/components/button';
 import { resolve } from '$app/paths';
 import User from '@lucide/svelte/icons/user';
 import Check from '@lucide/svelte/icons/check';
@@ -112,12 +112,12 @@ const importantInfo = [
 </svelte:head>
 
 <div class="w-full pt-8 pb-8 md:pt-12 md:pb-12 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20">
-	<Item.Header class="mb-8 md:mb-12 lg:mb-16">
-		<Item.Title class="text-3xl! md:text-4xl! lg:text-5xl!">Legal & Policies</Item.Title>
+	<div class="flex basis-full items-center justify-between gap-2 mb-8 md:mb-12 lg:mb-16">
+		<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-3xl! md:text-4xl! lg:text-5xl!">Legal & Policies</div>
 		<Item.Description class="text-base! lg:text-lg!">
 			Your trust is important to us. We're committed to being transparent about our practices and protecting your rights.
 		</Item.Description>
-	</Item.Header>
+	</div>
 
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-16 lg:mb-20">
 		{#each policies as policy}
@@ -126,7 +126,7 @@ const importantInfo = [
 				<Item.Root class="h-full">
 					<Item.Media variant="icon"><Icon /></Item.Media>
 					<Item.Content>
-						<Item.Title>{policy.title}</Item.Title>
+						<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">{policy.title}</div>
 						<Item.Description>{policy.description}</Item.Description>
 						<span class="text-xs text-foreground-subtle">Last updated: {policy.lastUpdated}</span>
 					</Item.Content>
@@ -135,9 +135,9 @@ const importantInfo = [
 		{/each}
 	</div>
 
-	<Item.Header class="mb-6 md:mb-8 lg:mb-10">
-		<Item.Title class="text-2xl! md:text-3xl!">Important Information</Item.Title>
-	</Item.Header>
+	<div class="flex basis-full items-center justify-between gap-2 mb-6 md:mb-8 lg:mb-10">
+		<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-2xl! md:text-3xl!">Important Information</div>
+	</div>
 
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16 lg:mb-20">
 		{#each importantInfo as info}
@@ -145,7 +145,7 @@ const importantInfo = [
 			<Item.Root>
 				<Item.Media variant="icon"><Icon /></Item.Media>
 				<Item.Content>
-					<Item.Title>{info.title}</Item.Title>
+					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">{info.title}</div>
 					<Item.Description>{info.description}</Item.Description>
 					<Button variant="link" href={info.href} class="p-0! h-auto!">{info.linkText} →</Button>
 				</Item.Content>

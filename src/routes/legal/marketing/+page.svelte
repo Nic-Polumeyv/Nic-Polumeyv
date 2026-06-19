@@ -1,6 +1,7 @@
 <script lang="ts">
-	import * as Item from '@polumeyv/ui/item';
-	import { Button } from '@polumeyv/ui/button';
+	import * as Item from '@polumeyv/ui/components/item';
+	import { Separator } from '@polumeyv/ui/components/separator';
+	import { Button } from '@polumeyv/ui/components/button';
 	import { resolve } from '$app/paths';
 	import Mail from '@lucide/svelte/icons/mail';
 	import MessageSquare from '@lucide/svelte/icons/message-square';
@@ -45,33 +46,33 @@
 		}} />
 
 	<Item.Root id="opt-out">
-		<Item.Header>
-			<Item.Title>How to Opt Out</Item.Title>
-		</Item.Header>
-		<Item.Separator />
+		<div class="flex basis-full items-center justify-between gap-2">
+			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">How to Opt Out</div>
+		</div>
+		<Separator class="my-0" />
 		<Item.Group>
 			<div class="flex gap-4 py-4">
 				<Item.Media variant="icon"><Mail /></Item.Media>
 				<Item.Content>
-					<Item.Title>Email</Item.Title>
+					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">Email</div>
 					<Item.Description>Click the "Unsubscribe" link at the bottom of any marketing email, or update your preferences in your account settings.</Item.Description>
 				</Item.Content>
 			</div>
-			<Item.Separator />
+			<Separator class="my-0" />
 			<div class="flex gap-4 py-4">
 				<Item.Media variant="icon"><MessageSquare /></Item.Media>
 				<Item.Content>
-					<Item.Title>SMS</Item.Title>
+					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">SMS</div>
 					<Item.Description
 						>Reply <strong>STOP</strong> to any marketing text message to stop receiving further marketing texts. Specific opt-out instructions for each product are listed
 						in that product's SMS terms.</Item.Description>
 				</Item.Content>
 			</div>
-			<Item.Separator />
+			<Separator class="my-0" />
 			<div class="flex gap-4 py-4">
 				<Item.Media variant="icon"><X /></Item.Media>
 				<Item.Content>
-					<Item.Title>All Marketing</Item.Title>
+					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">All Marketing</div>
 					<Item.Description
 						>Contact us at <Button variant="link" href="mailto:help@polumeyv.com">help@polumeyv.com</Button> to opt out of all marketing communications at once.</Item.Description>
 				</Item.Content>

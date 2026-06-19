@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { toggleMode, mode } from 'mode-watcher';
 
-	import * as Card from '@polumeyv/ui/card';
-	import * as Item from '@polumeyv/ui/item';
-	import * as Toggle from '@polumeyv/ui/toggle';
-	import { Badge } from '@polumeyv/ui/badge';
-	import { Button } from '@polumeyv/ui/button';
+	import * as Card from '@polumeyv/ui/components/card';
+	import * as Item from '@polumeyv/ui/components/item';
+	import { Separator } from '@polumeyv/ui/components/separator';
+	import * as Toggle from '@polumeyv/ui/components/toggle';
+	import { Badge } from '@polumeyv/ui/components/badge';
+	import { Button } from '@polumeyv/ui/components/button';
 	import { scrollReveal } from '@polumeyv/ui/hooks';
 	import MorphingText from '$lib/components/morphing-text.svelte';
 	import MailIcon from '@lucide/svelte/icons/mail';
@@ -210,12 +211,12 @@
 			<Item.Group class="grid! grid-cols-1 gap-6">
 				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<Item.Title class="text-xl! md:text-2xl!">Real Estate</Item.Title>
+						<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xl! md:text-2xl!">Real Estate</div>
 						<Badge variant="outline">Major</Badge>
 						<Item.Description>Property markets, valuation, investment analysis, and mortgage lending.</Item.Description>
 					</Item.Content>
-					<Item.Separator />
-					<Item.Footer class="flex-col items-start! gap-2 text-sm text-muted-foreground">
+					<Separator class="my-0" />
+					<div class="flex basis-full items-center justify-between gap-2 flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
 							<span class="font-medium text-foreground">Mortgage & Lending</span> — Deep expertise in mortgage structures, underwriting, loan products, interest rate mechanics,
 							and the secondary mortgage market.
@@ -227,16 +228,16 @@
 						<p>
 							<span class="font-medium text-foreground">Markets & Development</span> — Land use, market dynamics, zoning, and the lifecycle of real estate transactions.
 						</p>
-					</Item.Footer>
+					</div>
 				</Item.Root>
 				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<Item.Title class="text-xl! md:text-2xl!">Finance</Item.Title>
+						<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xl! md:text-2xl!">Finance</div>
 						<Badge variant="outline">Major</Badge>
 						<Item.Description>Financial systems, institutional theory, and the complex dynamics of modern markets.</Item.Description>
 					</Item.Content>
-					<Item.Separator />
-					<Item.Footer class="flex-col items-start! gap-2 text-sm text-muted-foreground">
+					<Separator class="my-0" />
+					<div class="flex basis-full items-center justify-between gap-2 flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
 							<span class="font-medium text-foreground">Consumer & Behavioral Finance</span> — Consumer science, decision-making theory, and how individual behavior shapes
 							financial markets.
@@ -249,16 +250,16 @@
 							<span class="font-medium text-foreground">Markets & Complexity</span> — Portfolio theory, risk modeling, derivatives, and navigating the interconnected nature
 							of global financial markets.
 						</p>
-					</Item.Footer>
+					</div>
 				</Item.Root>
 				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<Item.Title class="text-xl! md:text-2xl!">Computer Science</Item.Title>
+						<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xl! md:text-2xl!">Computer Science</div>
 						<Badge variant="outline">Minor</Badge>
 						<Item.Description>Low-level programming, systems architecture, and foundational computer science theory.</Item.Description>
 					</Item.Content>
-					<Item.Separator />
-					<Item.Footer class="flex-col items-start! gap-2 text-sm text-muted-foreground">
+					<Separator class="my-0" />
+					<div class="flex basis-full items-center justify-between gap-2 flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
 							<span class="font-medium text-foreground">Systems Architecture</span> — Low-level systems design, operating system concepts, hardware-software interaction, and
 							computational theory.
@@ -266,16 +267,16 @@
 						<p>
 							<span class="font-medium text-foreground">Theory & Analysis</span> — Data structures, algorithms, discrete mathematics, and computational complexity.
 						</p>
-					</Item.Footer>
+					</div>
 				</Item.Root>
 				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<Item.Title class="text-xl! md:text-2xl!">Entrepreneurship</Item.Title>
+						<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xl! md:text-2xl!">Entrepreneurship</div>
 						<Badge variant="outline">Certificate</Badge>
 						<Item.Description>Venture creation, funding strategy, and business operations across the full startup lifecycle.</Item.Description>
 					</Item.Content>
-					<Item.Separator />
-					<Item.Footer class="flex-col items-start! gap-2 text-sm text-muted-foreground">
+					<Separator class="my-0" />
+					<div class="flex basis-full items-center justify-between gap-2 flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
 							<span class="font-medium text-foreground">Venture Creation</span> — Opportunity identification, market validation, business model design, and launching new ventures
 							from concept to product.
@@ -288,7 +289,7 @@
 							<span class="font-medium text-foreground">Venture Management</span> — Scaling operations, team building, financial planning, and sustaining growth through the
 							early stages of a business.
 						</p>
-					</Item.Footer>
+					</div>
 				</Item.Root>
 			</Item.Group>
 		</div>

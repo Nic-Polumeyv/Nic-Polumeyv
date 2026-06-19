@@ -1,6 +1,7 @@
 <script lang="ts">
-	import * as Item from '@polumeyv/ui/item';
-	import { Button } from '@polumeyv/ui/button';
+	import * as Item from '@polumeyv/ui/components/item';
+	import { Separator } from '@polumeyv/ui/components/separator';
+	import { Button } from '@polumeyv/ui/components/button';
 	import type { Component } from 'svelte';
 
 	/** One icon row within a section — a labelled paragraph with an optional trailing link. */
@@ -24,17 +25,17 @@
 </script>
 
 <Item.Root {id}>
-	<Item.Header>
-		<Item.Title>{item.title}</Item.Title>
-	</Item.Header>
-	<Item.Separator />
+	<div class="flex basis-full items-center justify-between gap-2">
+		<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">{item.title}</div>
+	</div>
+	<Separator class="my-0" />
 	<Item.Group>
 		{#each item.items as row, i (row.title)}
 			{const Icon = row.icon}
 			<div class="flex gap-4 py-4">
 				<Item.Media variant="icon"><Icon /></Item.Media>
 				<Item.Content>
-					<Item.Title>{row.title}</Item.Title>
+					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">{row.title}</div>
 					<Item.Description>
 						{row.description}
 						{#if row.link}
@@ -44,7 +45,7 @@
 				</Item.Content>
 			</div>
 			{#if i < item.items.length - 1}
-				<Item.Separator />
+				<Separator class="my-0" />
 			{/if}
 		{/each}
 	</Item.Group>

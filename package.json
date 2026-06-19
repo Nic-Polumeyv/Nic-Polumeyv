@@ -24,7 +24,6 @@
 		"@sveltejs/adapter-static": "catalog:",
 		"@tailwindcss/vite": "catalog:styling",
 		"@tanstack/table-core": "catalog:ui",
-		"bits-ui": "catalog:ui",
 		"d3-scale": "catalog:ui",
 		"layerchart": "catalog:ui",
 		"mode-watcher": "catalog:ui",
