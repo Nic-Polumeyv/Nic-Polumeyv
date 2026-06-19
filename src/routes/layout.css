@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+@import '@polumeyv/ui/styles';
+@source '../../node_modules/@polumeyv/ui/dist';
+
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+}
+
+@theme inline {
+	--animate-aurora: aurora 60s linear infinite;
+	--animate-marquee: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-33.333%);
+	}
+}
+
+@keyframes aurora {
+	from {
+		background-position:
+			50% 50%,
+			50% 50%;
+	}
+	to {
+		background-position:
+			350% 50%,
+			350% 50%;
+	}
+}

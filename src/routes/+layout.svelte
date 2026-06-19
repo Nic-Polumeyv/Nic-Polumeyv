@@ -1,0 +1,41 @@
+<script lang="ts">
+	import './layout.css';
+	import { ModeWatcher } from 'mode-watcher';
+	import { Footer, Header } from '@polumeyv/ui/layout';
+	import { page } from '$app/state';
+
+	const navLinks = [
+		{ label: 'Nic', href: '/nic' },
+		{ label: 'Contact', href: '/contact' },
+	];
+
+	const legalLinks = [
+		{ label: 'Privacy', href: '/legal/privacy' },
+		{ label: 'Terms', href: '/legal/terms' },
+		{ label: 'Cookies', href: '/legal/cookies' },
+		{ label: 'Marketing', href: '/legal/marketing' },
+	];
+
+	let { children } = $props();
+</script>
+
+<ModeWatcher />
+
+<svelte:head>
+	<title>Polumeyv</title>
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="icon" href="/favicon.ico" sizes="48x48" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</svelte:head>
+
+<Header
+	brand="Polumeyv"
+	brandHref="/"
+	{navLinks}
+	showBorder={page.url.pathname !== '/'}
+	mobileId="polumeyv-mobile-nav" />
+
+<div class="bg-background flex flex-col">
+	{@render children()}
+	<Footer {navLinks} {legalLinks} />
+</div>
