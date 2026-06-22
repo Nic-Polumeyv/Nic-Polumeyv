@@ -138,13 +138,13 @@
 <main class="text-foreground">
 	<section class="relative min-h-screen flex items-center overflow-x-hidden px-4 sm:px-6 md:px-16 lg:px-24 py-16 md:py-0 -mt-16">
 		<div class="absolute inset-x-0 -top-16 bottom-0 z-0 transition-opacity duration-800" class:opacity-0={!isDarkMode}>
-			<Particles class="absolute inset-0" quantity={80} color="#ffffff" size={0.5} staticity={30} ease={80} />
+			<Particles class="absolute inset-0" quantity={80} size={0.5} staticity={30} ease={80} />
 		</div>
 
 		<div
 			class="absolute inset-x-0 -top-16 bottom-0 z-0 transition-opacity duration-1000"
 			style="opacity: {step === 'entering' || step === 'greeting' ? 0 : auroraOpacity}">
-			<Aurora class="absolute! inset-0 h-full! z-0! bg-transparent! dark:bg-transparent!" />
+			<Aurora />
 		</div>
 
 		<div class="relative z-10 w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center text-center md:text-left gap-8">
@@ -152,8 +152,14 @@
 				<div class="flex items-center justify-center md:justify-start gap-1 mb-4">
 					{#if step === 'entering'}
 						<div class="text-4xl md:text-6xl lg:text-7xl font-black leading-none">
-							<span class="inline-block transition-all duration-500 ease-out {wordsRevealed >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}">Hey</span>
-							<span class="inline-block transition-all duration-500 ease-out {wordsRevealed >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}">
+							<span
+								class="inline-block transition-all duration-500 ease-out {wordsRevealed >= 1
+									? 'opacity-100 translate-y-0'
+									: 'opacity-0 translate-y-4'}">Hey</span>
+							<span
+								class="inline-block transition-all duration-500 ease-out {wordsRevealed >= 2
+									? 'opacity-100 translate-y-0'
+									: 'opacity-0 translate-y-4'}">
 								there!</span>
 						</div>
 					{:else}
@@ -168,11 +174,19 @@
 				</div>
 
 				<div class="text-muted-foreground text-base sm:text-lg mb-4">
-					<span class="inline-block transition-all duration-400 ease-out {rolesVisible >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}"
-						>Software Engineer</span>
-					<span class="inline-block transition-all duration-400 ease-out {rolesVisible >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}">
+					<span
+						class="inline-block transition-all duration-400 ease-out {rolesVisible >= 1
+							? 'opacity-100 translate-y-0'
+							: 'opacity-0 translate-y-2'}">Software Engineer</span>
+					<span
+						class="inline-block transition-all duration-400 ease-out {rolesVisible >= 2
+							? 'opacity-100 translate-y-0'
+							: 'opacity-0 translate-y-2'}">
 						&bull; Web Developer</span>
-					<span class="inline-block transition-all duration-400 ease-out {rolesVisible >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}">
+					<span
+						class="inline-block transition-all duration-400 ease-out {rolesVisible >= 3
+							? 'opacity-100 translate-y-0'
+							: 'opacity-0 translate-y-2'}">
 						&bull; Designer</span>
 				</div>
 
@@ -191,13 +205,19 @@
 				</div>
 			</div>
 
-			<div class="hero-img w-full md:w-1/2 flex justify-center transition-all duration-700 ease-in-out delay-100" class:revealed={isRevealed}>
-				<img src="/about-nic.webp" alt="Nic Polumeyv" class="max-h-[35vh] sm:max-h-[40vh] md:max-h-[55vh] w-auto rounded-xl object-contain" />
+			<div
+				class="hero-img w-full md:w-1/2 flex justify-center transition-all duration-700 ease-in-out delay-100"
+				class:revealed={isRevealed}>
+				<img
+					src="/about-nic.webp"
+					alt="Nic Polumeyv"
+					class="max-h-[35vh] sm:max-h-[40vh] md:max-h-[55vh] w-auto rounded-xl object-contain" />
 			</div>
 		</div>
 	</section>
 
-	<section class="education relative bg-background overflow-clip min-h-screen flex items-center py-20 sm:py-28 md:py-40 lg:py-52 px-4 sm:px-6 md:px-16 lg:px-24">
+	<section
+		class="education relative bg-background overflow-clip min-h-screen flex items-center py-20 sm:py-28 md:py-40 lg:py-52 px-4 sm:px-6 md:px-16 lg:px-24">
 		<div class="max-w-5xl mx-auto w-full" {@attach scrollReveal({ y: 40 })}>
 			<div class="flex flex-col items-center md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-20">
 				<div class="text-center md:text-left">
@@ -211,83 +231,86 @@
 			<Item.Group class="grid! grid-cols-1 gap-6">
 				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xl! md:text-2xl!">Real Estate</div>
+						<div class="flex w-fit items-center gap-2leading-snug font-medium text-xl md:text-2xl!">Real Estate</div>
 						<Badge variant="outline">Major</Badge>
 						<Item.Description>Property markets, valuation, investment analysis, and mortgage lending.</Item.Description>
 					</Item.Content>
 					<Separator class="my-0" />
-					<div class="flex basis-full items-center justify-between gap-2 flex-col items-start! gap-2 text-sm text-muted-foreground">
+					<div class="flex basis-full justify-between gap-2 flex-col items-starttext-sm text-muted-foreground">
 						<p>
-							<span class="font-medium text-foreground">Mortgage & Lending</span> — Deep expertise in mortgage structures, underwriting, loan products, interest rate mechanics,
-							and the secondary mortgage market.
+							<span class="font-medium text-foreground">Mortgage & Lending</span> — Deep expertise in mortgage structures, underwriting, loan
+							products, interest rate mechanics, and the secondary mortgage market.
 						</p>
 						<p>
-							<span class="font-medium text-foreground">Valuation & Investment</span> — Commercial appraisal, property analysis, investment underwriting, and real estate financial
-							modeling.
+							<span class="font-medium text-foreground">Valuation & Investment</span> — Commercial appraisal, property analysis, investment underwriting,
+							and real estate financial modeling.
 						</p>
 						<p>
-							<span class="font-medium text-foreground">Markets & Development</span> — Land use, market dynamics, zoning, and the lifecycle of real estate transactions.
+							<span class="font-medium text-foreground">Markets & Development</span> — Land use, market dynamics, zoning, and the lifecycle of
+							real estate transactions.
 						</p>
 					</div>
 				</Item.Root>
 				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xl! md:text-2xl!">Finance</div>
+						<div class="flex w-fit items-center gap-2 leading-snug font-medium text-xl md:text-2xl!">Finance</div>
 						<Badge variant="outline">Major</Badge>
 						<Item.Description>Financial systems, institutional theory, and the complex dynamics of modern markets.</Item.Description>
 					</Item.Content>
 					<Separator class="my-0" />
-					<div class="flex basis-full items-center justify-between gap-2 flex-col items-start! gap-2 text-sm text-muted-foreground">
+					<div class="flex basis-full justify-between flex-col items-start gap-2 text-sm text-muted-foreground">
 						<p>
-							<span class="font-medium text-foreground">Consumer & Behavioral Finance</span> — Consumer science, decision-making theory, and how individual behavior shapes
-							financial markets.
+							<span class="font-medium text-foreground">Consumer & Behavioral Finance</span> — Consumer science, decision-making theory, and how
+							individual behavior shapes financial markets.
 						</p>
 						<p>
-							<span class="font-medium text-foreground">Institutions & Systems</span> — The structure and mechanics of financial institutions, banking systems, and regulatory
-							frameworks that govern capital flow.
+							<span class="font-medium text-foreground">Institutions & Systems</span> — The structure and mechanics of financial institutions,
+							banking systems, and regulatory frameworks that govern capital flow.
 						</p>
 						<p>
-							<span class="font-medium text-foreground">Markets & Complexity</span> — Portfolio theory, risk modeling, derivatives, and navigating the interconnected nature
-							of global financial markets.
+							<span class="font-medium text-foreground">Markets & Complexity</span> — Portfolio theory, risk modeling, derivatives, and navigating
+							the interconnected nature of global financial markets.
 						</p>
 					</div>
 				</Item.Root>
 				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xl! md:text-2xl!">Computer Science</div>
+						<div class="flex w-fit items-center gap-2 leading-snug font-medium text-xl md:text-2xl!">Computer Science</div>
 						<Badge variant="outline">Minor</Badge>
 						<Item.Description>Low-level programming, systems architecture, and foundational computer science theory.</Item.Description>
 					</Item.Content>
 					<Separator class="my-0" />
-					<div class="flex basis-full items-center justify-between gap-2 flex-col items-start! gap-2 text-sm text-muted-foreground">
+					<div class="flex basis-full justify-between flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
-							<span class="font-medium text-foreground">Systems Architecture</span> — Low-level systems design, operating system concepts, hardware-software interaction, and
-							computational theory.
+							<span class="font-medium text-foreground">Systems Architecture</span> — Low-level systems design, operating system concepts, hardware-software
+							interaction, and computational theory.
 						</p>
 						<p>
-							<span class="font-medium text-foreground">Theory & Analysis</span> — Data structures, algorithms, discrete mathematics, and computational complexity.
+							<span class="font-medium text-foreground">Theory & Analysis</span> — Data structures, algorithms, discrete mathematics, and computational
+							complexity.
 						</p>
 					</div>
 				</Item.Root>
 				<Item.Root variant="outline" class="items-start!">
 					<Item.Content>
-						<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xl! md:text-2xl!">Entrepreneurship</div>
+						<div class="flex w-fit items-center gap-2 leading-snug font-medium text-xl md:text-2xl!">Entrepreneurship</div>
 						<Badge variant="outline">Certificate</Badge>
-						<Item.Description>Venture creation, funding strategy, and business operations across the full startup lifecycle.</Item.Description>
+						<Item.Description
+							>Venture creation, funding strategy, and business operations across the full startup lifecycle.</Item.Description>
 					</Item.Content>
 					<Separator class="my-0" />
-					<div class="flex basis-full items-center justify-between gap-2 flex-col items-start! gap-2 text-sm text-muted-foreground">
+					<div class="flex basis-full justify-between flex-col items-start! gap-2 text-sm text-muted-foreground">
 						<p>
-							<span class="font-medium text-foreground">Venture Creation</span> — Opportunity identification, market validation, business model design, and launching new ventures
-							from concept to product.
+							<span class="font-medium text-foreground">Venture Creation</span> — Opportunity identification, market validation, business model
+							design, and launching new ventures from concept to product.
 						</p>
 						<p>
-							<span class="font-medium text-foreground">Funding & Capital</span> — Venture capital structuring, deal flow, term sheets, and fundraising strategy. Familiarity
-							with angel investing and early-stage financing.
+							<span class="font-medium text-foreground">Funding & Capital</span> — Venture capital structuring, deal flow, term sheets, and fundraising
+							strategy. Familiarity with angel investing and early-stage financing.
 						</p>
 						<p>
-							<span class="font-medium text-foreground">Venture Management</span> — Scaling operations, team building, financial planning, and sustaining growth through the
-							early stages of a business.
+							<span class="font-medium text-foreground">Venture Management</span> — Scaling operations, team building, financial planning, and
+							sustaining growth through the early stages of a business.
 						</p>
 					</div>
 				</Item.Root>
@@ -304,7 +327,9 @@
 
 			<div class="space-y-8">
 				{#each projects as p, i (p.title)}
-					<Card.Root class="overflow-hidden cursor-pointer hover:ring-2 hover:ring-primary/20 transition-all" onclick={() => openProject(p)}>
+					<Card.Root
+						class="overflow-hidden cursor-pointer hover:ring-2 hover:ring-primary/20 transition-all"
+						onclick={() => openProject(p)}>
 						<div class="grid grid-cols-1 md:grid-cols-2">
 							<div class="aspect-video md:aspect-auto">
 								<img src={isDarkMode ? p.imgDark : p.imgLight} alt={p.title} class="w-full h-full object-cover object-top" />
@@ -324,7 +349,13 @@
 									</div>
 								</Card.Content>
 								<Card.Footer>
-									<Button href={p.url} target="_blank" rel="noopener" variant="outline" class="gap-2!" onclick={(e: MouseEvent) => e.stopPropagation()}>
+									<Button
+										href={p.url}
+										target="_blank"
+										rel="noopener"
+										variant="outline"
+										class="gap-2!"
+										onclick={(e: MouseEvent) => e.stopPropagation()}>
 										Visit Site <ArrowRightIcon class="size-4" />
 									</Button>
 								</Card.Footer>
@@ -344,9 +375,12 @@
 					<Card.Description class="text-sm md:text-base">Follow my work, collaborate, or let's build something together</Card.Description>
 				</Card.Header>
 				<Card.Content class="flex flex-wrap justify-center gap-3 sm:gap-4">
-					<Button href="mailto:nic@polumeyv.com" variant="outline" size="icon" class="size-10! md:size-12!"><MailIcon class="size-5 md:size-6" /></Button>
-					<Button href="tel:7625249497" variant="outline" size="icon" class="size-10! md:size-12!"><PhoneIcon class="size-5 md:size-6" /></Button>
-					<Button href="sms:7625249497" variant="outline" size="icon" class="size-10! md:size-12!"><MessageCircleIcon class="size-5 md:size-6" /></Button>
+					<Button href="mailto:nic@polumeyv.com" variant="outline" size="icon" class="size-10! md:size-12!"
+						><MailIcon class="size-5 md:size-6" /></Button>
+					<Button href="tel:7625249497" variant="outline" size="icon" class="size-10! md:size-12!"
+						><PhoneIcon class="size-5 md:size-6" /></Button>
+					<Button href="sms:7625249497" variant="outline" size="icon" class="size-10! md:size-12!"
+						><MessageCircleIcon class="size-5 md:size-6" /></Button>
 					<Button href="https://github.com/Nic-Polumeyv" variant="outline" size="icon" class="size-10! md:size-12!">
 						<svg class="size-5 md:size-6" viewBox="0 0 24 24" fill="currentColor"
 							><path
