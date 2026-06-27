@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import { ModeWatcher } from 'mode-watcher';
+	import { ModeWatcher } from '@polumeyv/ui/components/theme-toggle';
 	import { Footer, Header } from '@polumeyv/ui/layout';
 	import { page } from '$app/state';
 

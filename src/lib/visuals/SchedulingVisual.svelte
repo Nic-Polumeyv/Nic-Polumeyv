@@ -1,14 +1,6 @@
 <script lang="ts">
-	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-	import ChevronRight from '@lucide/svelte/icons/chevron-right';
-
-	const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-
-	// January 2026 starts on Thursday when using Sunday-first columns
-	const startDay = 4;
-	const daysInMonth = 31;
-	const selected = 15;
-	const today = 10;
+	import { Calendar } from '@polumeyv/ui/blocks';
+	import { CalendarDate } from '@internationalized/date';
 
 	type TimeSlot = {
 		time: string;
@@ -25,49 +17,12 @@
 		{ time: '11:30 - 12:10 PM', available: false },
 		{ time: '12:00 - 12:40 PM', available: true },
 	];
-
-	const days: (number | null)[] = [];
-	for (let i = 0; i < startDay; i++) days.push(null);
-	for (let i = 1; i <= daysInMonth; i++) days.push(i);
 </script>
 
 <div class="mx-auto grid w-full max-w-4xl grid-cols-1 sm:grid-cols-2 gap-4">
-	<!-- Calendar -->
-	<div class="rounded-2xl bg-card p-4 sm:p-5 shadow-sm min-h-85">
-		<div class="relative flex items-center justify-center">
-			<button class="absolute left-0 inline-flex size-8 items-center justify-center rounded-md text-muted-foreground/50 hover:text-foreground">
-				<ChevronLeft class="size-4" />
-			</button>
-
-			<span class="text-sm font-semibold">January 2026</span>
-
-			<button class="absolute right-0 inline-flex size-8 items-center justify-center rounded-md text-muted-foreground/50 hover:text-foreground">
-				<ChevronRight class="size-4" />
-			</button>
-		</div>
-
-		<div class="mt-5 grid grid-cols-7 gap-y-2">
-			{#each weekdays as day (day)}
-				<div class="flex items-center justify-center text-[0.7rem] font-medium text-muted-foreground/40">
-					{day}
-				</div>
-			{/each}
-
-			{#each days as num, i (i)}
-				{const isSelected = num === selected}
-				{const isToday = num === today && !isSelected}
-
-				<div class="flex items-center justify-center">
-					{#if num}
-						<div
-							class="flex size-9 items-center justify-center rounded-lg text-[13px] select-none
-							{isSelected ? 'bg-primary font-semibold text-primary-foreground shadow-sm' : isToday ? 'ring-1 ring-primary/30 font-medium' : 'text-foreground/70'}">
-							{num}
-						</div>
-					{/if}
-				</div>
-			{/each}
-		</div>
+	<!-- Calendar — the real component, made inert so it reads as a non-interactive mockup -->
+	<div class="flex items-center justify-center rounded-2xl bg-card p-4 sm:p-5 shadow-sm min-h-85" inert>
+		<Calendar type="single" readonly captionLayout="label" value={new CalendarDate(2026, 1, 15)} class="w-full" />
 	</div>
 
 	<!-- Time slots -->
