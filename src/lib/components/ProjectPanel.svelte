@@ -6,7 +6,7 @@
 	import XIcon from '@lucide/svelte/icons/x';
 	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
 	import { IsMobile } from '@polumeyv/ui/hooks';
-	import { mode } from 'mode-watcher';
+	import { mode } from '@polumeyv/ui/components/theme-toggle';
 
 	type Project = {
 		title: string;
@@ -120,7 +120,7 @@
 				in:spinScale={{ duration: 600, delay: 200, easing: backOut }}
 				out:fade={{ duration: 150 }}
 				onclick={close}
-				class="absolute top-4 right-4 z-10 size-10 rounded-full bg-muted/80 backdrop-blur flex items-center justify-center hover:bg-muted transition-colors"
+				class="absolute top-4 right-4 z-10 size-10 rounded-full bg-muted/80 backdrop-blur grid place-items-center hover:bg-muted transition-colors"
 				aria-label="Close panel">
 				<XIcon class="size-5" />
 			</button>

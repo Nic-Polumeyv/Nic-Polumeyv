@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { toggleMode, mode } from 'mode-watcher';
+	import { toggleMode, mode } from '@polumeyv/ui/components/theme-toggle';
 
 	import * as Card from '@polumeyv/ui/components/card';
 	import * as Item from '@polumeyv/ui/components/item';
@@ -168,8 +168,7 @@
 							initialDelay={0.3}
 							morphDuration={1.2}
 							start={step === 'morphing' || step === 'revealing'}
-							onComplete={onMorphComplete}
-							class="font-black!" />
+							onComplete={onMorphComplete} />
 					{/if}
 				</div>
 
@@ -367,7 +366,7 @@
 		</div>
 	</section>
 
-	<section class="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6">
+	<section class="min-h-screen grid place-items-center py-20 px-4 sm:px-6">
 		<WalkingBorder duration={10}>
 			<Card.Root class="w-full max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl text-center">
 				<Card.Header>
