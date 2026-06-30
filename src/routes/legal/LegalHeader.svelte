@@ -10,6 +10,6 @@
 </svelte:head>
 
 <div class="flex basis-full items-center justify-between gap-2 mb-8">
-	<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-2xl! md:text-3xl! text-primary">{title}</div>
+	<Item.Title class="text-2xl! md:text-3xl! text-primary">{title}</Item.Title>
 	<Item.Description>Effective Date: {date}</Item.Description>
 </div>

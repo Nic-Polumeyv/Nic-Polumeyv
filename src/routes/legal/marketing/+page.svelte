@@ -47,14 +47,14 @@
 
 	<Item.Root id="opt-out">
 		<div class="flex basis-full items-center justify-between gap-2">
-			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">How to Opt Out</div>
+			<Item.Title>How to Opt Out</Item.Title>
 		</div>
 		<Separator class="my-0" />
 		<Item.Group>
 			<div class="flex gap-4 py-4">
 				<Item.Media variant="icon"><Mail /></Item.Media>
 				<Item.Content>
-					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">Email</div>
+					<Item.Title>Email</Item.Title>
 					<Item.Description>Click the "Unsubscribe" link at the bottom of any marketing email, or update your preferences in your account settings.</Item.Description>
 				</Item.Content>
 			</div>
@@ -62,7 +62,7 @@
 			<div class="flex gap-4 py-4">
 				<Item.Media variant="icon"><MessageSquare /></Item.Media>
 				<Item.Content>
-					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">SMS</div>
+					<Item.Title>SMS</Item.Title>
 					<Item.Description
 						>Reply <strong>STOP</strong> to any marketing text message to stop receiving further marketing texts. Specific opt-out instructions for each product are listed
 						in that product's SMS terms.</Item.Description>
@@ -72,7 +72,7 @@
 			<div class="flex gap-4 py-4">
 				<Item.Media variant="icon"><X /></Item.Media>
 				<Item.Content>
-					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">All Marketing</div>
+					<Item.Title>All Marketing</Item.Title>
 					<Item.Description
 						>Contact us at <Button variant="link" href="mailto:help@polumeyv.com">help@polumeyv.com</Button> to opt out of all marketing communications at once.</Item.Description>
 				</Item.Content>

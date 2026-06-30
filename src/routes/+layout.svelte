@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import { ModeWatcher } from '@polumeyv/ui/components/theme-toggle';
+	import { initTheme } from '@polumeyv/ui/components/theme-toggle';
 	import { Footer, Header } from '@polumeyv/ui/layout';
 	import { page } from '$app/state';
 
@@ -17,9 +17,9 @@
 	];
 
 	let { children } = $props();
-</script>
 
-<ModeWatcher />
+	initTheme();
+</script>
 
 <svelte:head>
 	<title>Polumeyv</title>

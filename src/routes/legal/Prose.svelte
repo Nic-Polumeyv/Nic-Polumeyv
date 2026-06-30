@@ -7,7 +7,7 @@
 
 <Item.Root {id}>
 	<div class="flex basis-full items-center justify-between gap-2">
-		<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">{title}</div>
+		<Item.Title>{title}</Item.Title>
 		<Item.Description>{@render children()}</Item.Description>
 	</div>
 </Item.Root>

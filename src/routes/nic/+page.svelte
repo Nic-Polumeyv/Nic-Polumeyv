@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { toggleMode, mode } from '@polumeyv/ui/components/theme-toggle';
+	import { getTheme } from '@polumeyv/ui/components/theme-toggle';
 
 	import * as Card from '@polumeyv/ui/components/card';
 	import * as Item from '@polumeyv/ui/components/item';
@@ -20,7 +20,8 @@
 	import WalkingBorder from '$lib/components/WalkingBorder.svelte';
 	import ProjectPanel from '$lib/components/ProjectPanel.svelte';
 
-	let isDarkMode = $derived(mode.current !== 'light');
+	const theme = getTheme();
+	let isDarkMode = $derived(theme.current !== 'light');
 
 	// Aurora fades to half immediately on mode switch, then fully out after colors morph
 	let auroraOpacity = $state(1);
