@@ -26,7 +26,7 @@
 
 <Item.Root {id}>
 	<div class="flex basis-full items-center justify-between gap-2">
-		<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">{item.title}</div>
+		<Item.Title>{item.title}</Item.Title>
 	</div>
 	<Separator class="my-0" />
 	<Item.Group>
@@ -35,7 +35,7 @@
 			<div class="flex gap-4 py-4">
 				<Item.Media variant="icon"><Icon /></Item.Media>
 				<Item.Content>
-					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">{row.title}</div>
+					<Item.Title>{row.title}</Item.Title>
 					<Item.Description>
 						{row.description}
 						{#if row.link}

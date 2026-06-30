@@ -5,8 +5,8 @@
 	import { Button } from '@polumeyv/ui/components/button';
 	import XIcon from '@lucide/svelte/icons/x';
 	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
-	import { IsMobile } from '@polumeyv/ui/hooks';
-	import { mode } from '@polumeyv/ui/components/theme-toggle';
+	import { isMobile } from '@polumeyv/ui/hooks';
+	import { getTheme } from '@polumeyv/ui/components/theme-toggle';
 
 	type Project = {
 		title: string;
@@ -18,7 +18,8 @@
 		tech: string[];
 	};
 
-	let isDarkMode = $derived(mode.current !== 'light');
+	const theme = getTheme();
+	let isDarkMode = $derived(theme.current !== 'light');
 
 	let {
 		project,
@@ -29,8 +30,6 @@
 		open: boolean;
 		onclose?: () => void;
 	} = $props();
-
-	const isMobile = new IsMobile();
 
 	// Custom transition: panel slides in with optional rotateY on desktop
 	function panelSlide(

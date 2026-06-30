@@ -65,7 +65,7 @@
 
 	<Item.Root>
 		<div class="flex basis-full items-center justify-between gap-2">
-			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">How We Use Your Information</div>
+			<Item.Title>How We Use Your Information</Item.Title>
 		</div>
 		<Item.Content>
 			<ul class="list-disc list-inside space-y-1 text-sm">
@@ -118,7 +118,7 @@
 
 	<Item.Root>
 		<div class="flex basis-full items-center justify-between gap-2">
-			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">Data Security</div>
+			<Item.Title>Data Security</Item.Title>
 			<Item.Description>We implement appropriate technical and organizational measures to protect your personal information, including:</Item.Description>
 		</div>
 		<Item.Content>
@@ -181,7 +181,7 @@
 
 	<Item.Root id="data-retention">
 		<div class="flex basis-full items-center justify-between gap-2">
-			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">Data Retention</div>
+			<Item.Title>Data Retention</Item.Title>
 			<Item.Description>We retain your personal information for as long as necessary to fulfill the purposes for which it was collected, including:</Item.Description>
 		</div>
 		<Item.Content>
@@ -220,7 +220,7 @@
 
 	<Item.Root>
 		<div class="flex basis-full items-center justify-between gap-2">
-			<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium">Contact Us</div>
+			<Item.Title>Contact Us</Item.Title>
 			<Item.Description>If you have any questions or concerns about our Privacy Policy or our data practices, please contact us at:</Item.Description>
 		</div>
 		<Item.Content>

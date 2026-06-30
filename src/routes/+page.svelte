@@ -148,7 +148,7 @@
 					<Icon class="size-4 sm:size-5 text-primary" />
 				</Item.Media>
 				<Item.Content>
-					<div class="flex w-fit items-center gap-2 text-sm leading-snug font-medium text-xs! sm:text-sm!">{b.name}</div>
+					<Item.Title class="text-xs! sm:text-sm!">{b.name}</Item.Title>
 				</Item.Content>
 			</Item.Root>
 		{/each}

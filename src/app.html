@@ -3,6 +3,17 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			(() => {
+				const m = localStorage.getItem('mode');
+				const dark =
+					m === 'dark' ||
+					((m === 'system' || !m) && matchMedia('(prefers-color-scheme: dark)').matches);
+				const el = document.documentElement;
+				el.classList.toggle('dark', dark);
+				el.style.colorScheme = dark ? 'dark' : 'light';
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover" class="bg-background text-foreground overscroll-none font-sans antialiased">
