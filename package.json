@@ -28,7 +28,6 @@
 		"@tanstack/table-core": "catalog:ui",
 		"d3-scale": "catalog:ui",
 		"layerchart": "catalog:ui",
-		"paneforge": "catalog:ui",
 		"svelte": "catalog:",
 		"svelte-check": "catalog:",
 		"tailwindcss": "catalog:styling",
