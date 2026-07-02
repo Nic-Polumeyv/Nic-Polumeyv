@@ -10,9 +10,9 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
 	},
 	"dependencies": {
-		"@internationalized/date": "catalog:ui",
 		"@polumeyv/ui": "catalog:ui",
 		"@polumeyv/lib": "catalog:infra",
+		"@polumeyv/utilities": "catalog:infra",
 		"effect": "catalog:infra",
 		"jose": "catalog:auth",
 		"stripe": "catalog:infra"
