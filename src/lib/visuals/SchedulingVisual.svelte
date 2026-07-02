@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Calendar } from '@polumeyv/ui/blocks';
-	import { CalendarDate } from '@internationalized/date';
+	import { DateString, toCalendarDate } from '@polumeyv/utilities/date';
 
 	type TimeSlot = {
 		time: string;
@@ -22,7 +22,7 @@
 <div class="mx-auto grid w-full max-w-4xl grid-cols-1 sm:grid-cols-2 gap-4">
 	<!-- Calendar — the real component, made inert so it reads as a non-interactive mockup -->
 	<div class="flex items-center justify-center rounded-2xl bg-card p-4 sm:p-5 shadow-sm min-h-85" inert>
-		<Calendar type="single" readonly captionLayout="label" value={new CalendarDate(2026, 1, 15)} class="w-full" />
+		<Calendar type="single" readonly captionLayout="label" value={toCalendarDate(DateString.make('2026-01-15'))} class="w-full" />
 	</div>
 
 	<!-- Time slots -->
