@@ -41,8 +41,5 @@ export default defineConfig({
 			},
 		}),
 	],
-	ssr: {
-		external: ['@polumeyv/lib'],
-	},
 	server: { port: 3000, strictPort: true, fs: { allow: [searchForWorkspaceRoot(process.cwd())] } },
 });
