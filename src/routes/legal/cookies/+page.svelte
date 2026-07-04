@@ -9,15 +9,17 @@
 	import Section from '../Section.svelte';
 
 	let { data } = $props();
-
 </script>
 
-<LegalHeader title="Cookie Policy" meta="Polumeyv LLC Cookie Policy - Learn how we use cookies and similar technologies on our website." date={data.policyDate} />
+<LegalHeader
+	title="Cookie Policy"
+	meta="Polumeyv LLC Cookie Policy - Learn how we use cookies and similar technologies on our website."
+	date={data.policyDate} />
 
 <div class="space-y-6">
 	<Prose title="What Are Cookies?">
-		Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently, as well as to
-		provide information to the website owners.
+		Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more
+		efficiently, as well as to provide information to the website owners.
 	</Prose>
 
 	<Section
@@ -52,11 +54,15 @@
 		}} />
 
 	<Prose title="How to Control Cookies" id="control-cookies">
-		Most web browsers allow some control of most cookies through the browser settings. To find out more about cookies, including how to see what cookies have been set and
-		how to manage and delete them, visit <Button variant="link" href="https://www.allaboutcookies.org">www.allaboutcookies.org</Button>.
+		Most web browsers allow some control of most cookies through the browser settings. To find out more about cookies, including how to see
+		what cookies have been set and how to manage and delete them, visit <Button variant="link" href="https://www.allaboutcookies.org"
+			>www.allaboutcookies.org</Button
+		>.
 	</Prose>
 
 	<Prose title="Contact Us">
-		If you have any questions about our Cookie Policy, please contact us at <Button variant="link" href="mailto:help@polumeyv.com">help@polumeyv.com</Button>.
+		If you have any questions about our Cookie Policy, please contact us at <Button variant="link" href="mailto:help@polumeyv.com"
+			>help@polumeyv.com</Button
+		>.
 	</Prose>
 </div>

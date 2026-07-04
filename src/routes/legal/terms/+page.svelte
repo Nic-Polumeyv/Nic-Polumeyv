@@ -35,20 +35,23 @@
 	import Prose from '../Prose.svelte';
 	import Section from '../Section.svelte';
 
-
 	let { data } = $props();
 </script>
 
-<LegalHeader title="Terms of Service" meta="Polumeyv LLC Terms of Service - Legal agreement governing the use of our services and platform." date={data.policyDate} />
+<LegalHeader
+	title="Terms of Service"
+	meta="Polumeyv LLC Terms of Service - Legal agreement governing the use of our services and platform."
+	date={data.policyDate} />
 
 <div class="space-y-6">
 	<Prose title="Acceptance of Terms"
-		>By accessing or using our website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any
-		of these terms, you are prohibited from using or accessing our services.</Prose>
+		>By accessing or using our website and services, you agree to be bound by these Terms of Service and all applicable laws and
+		regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.</Prose>
 
 	<Prose title="Eligibility & Account Registration"
-		>To use certain features, you may need to register for an account. You must be at least 18 years old, provide accurate information, keep your account up-to-date, and
-		maintain the confidentiality of your credentials. You are responsible for all activities under your account.</Prose>
+		>To use certain features, you may need to register for an account. You must be at least 18 years old, provide accurate information, keep
+		your account up-to-date, and maintain the confidentiality of your credentials. You are responsible for all activities under your
+		account.</Prose>
 
 	<Section
 		item={{
@@ -74,7 +77,8 @@
 				},
 				{
 					title: 'Service Modifications',
-					description: 'We reserve the right to modify, suspend, or discontinue any aspect of our services at any time, with or without notice.',
+					description:
+						'We reserve the right to modify, suspend, or discontinue any aspect of our services at any time, with or without notice.',
 					icon: Settings,
 				},
 			],
@@ -149,7 +153,8 @@
 				},
 				{
 					title: 'Trademarks',
-					description: 'Polumeyv and our product names and logos are trademarks of Polumeyv LLC. You may not use our trademarks without our prior written permission.',
+					description:
+						'Polumeyv and our product names and logos are trademarks of Polumeyv LLC. You may not use our trademarks without our prior written permission.',
 					icon: Award,
 				},
 				{
@@ -168,8 +173,8 @@
 		}} />
 
 	<Prose title="Third-Party Services"
-		>Our services integrate with third-party services such as Stripe for payments and Telnyx for SMS. Your use of these services is subject to their respective terms. We
-		are not responsible for third-party availability, accuracy, or content.</Prose>
+		>Our services integrate with third-party services such as Stripe for payments and Telnyx for SMS. Your use of these services is subject
+		to their respective terms. We are not responsible for third-party availability, accuracy, or content.</Prose>
 
 	<Section
 		item={{
@@ -183,7 +188,8 @@
 				},
 				{
 					title: 'No Warranties',
-					description: 'We do not warrant that the services will be uninterrupted, error-free, or completely secure. You use the services at your own risk.',
+					description:
+						'We do not warrant that the services will be uninterrupted, error-free, or completely secure. You use the services at your own risk.',
 					icon: XCircle,
 				},
 				{
@@ -194,7 +200,8 @@
 				},
 				{
 					title: 'Liability Cap',
-					description: 'IN NO EVENT SHALL OUR TOTAL LIABILITY EXCEED THE GREATER OF $100 OR THE AMOUNT YOU PAID US IN THE TWELVE MONTHS PRECEDING THE CLAIM.',
+					description:
+						'IN NO EVENT SHALL OUR TOTAL LIABILITY EXCEED THE GREATER OF $100 OR THE AMOUNT YOU PAID US IN THE TWELVE MONTHS PRECEDING THE CLAIM.',
 					icon: CircleDollarSign,
 				},
 			],
@@ -202,12 +209,13 @@
 		id="disclaimers" />
 
 	<Prose title="Indemnification"
-		>You agree to defend, indemnify, and hold harmless Polumeyv LLC and its affiliates from any claims, liabilities, damages, losses, and expenses arising from your use
-		of the services, violation of these Terms, or infringement of any third-party rights.</Prose>
+		>You agree to defend, indemnify, and hold harmless Polumeyv LLC and its affiliates from any claims, liabilities, damages, losses, and
+		expenses arising from your use of the services, violation of these Terms, or infringement of any third-party rights.</Prose>
 
 	<Prose title="Termination" id="termination"
-		>Either party may terminate these Terms at any time. We may suspend or terminate your access immediately for any reason, including breach of these Terms. Upon
-		termination, your right to use the services will cease. Provisions that should survive termination will remain in effect.</Prose>
+		>Either party may terminate these Terms at any time. We may suspend or terminate your access immediately for any reason, including
+		breach of these Terms. Upon termination, your right to use the services will cease. Provisions that should survive termination will
+		remain in effect.</Prose>
 
 	<Section
 		item={{
@@ -221,12 +229,14 @@
 				},
 				{
 					title: 'Venue',
-					description: 'Any legal action or proceeding shall be brought exclusively in the federal or state courts located in Athens-Clarke County, Georgia.',
+					description:
+						'Any legal action or proceeding shall be brought exclusively in the federal or state courts located in Athens-Clarke County, Georgia.',
 					icon: MapPin,
 				},
 				{
 					title: 'Arbitration',
-					description: 'Any dispute shall be finally resolved by binding arbitration in accordance with the JAMS Streamlined Arbitration Rules and Procedures.',
+					description:
+						'Any dispute shall be finally resolved by binding arbitration in accordance with the JAMS Streamlined Arbitration Rules and Procedures.',
 					icon: Handshake,
 				},
 				{
@@ -244,12 +254,14 @@
 			items: [
 				{
 					title: 'Entire Agreement',
-					description: 'These Terms constitute the entire agreement between you and Polumeyv LLC regarding the use of our services and supersede all prior agreements.',
+					description:
+						'These Terms constitute the entire agreement between you and Polumeyv LLC regarding the use of our services and supersede all prior agreements.',
 					icon: FileText,
 				},
 				{
 					title: 'Severability',
-					description: 'If any provision of these Terms is held invalid or unenforceable, the remaining provisions shall continue in full force and effect.',
+					description:
+						'If any provision of these Terms is held invalid or unenforceable, the remaining provisions shall continue in full force and effect.',
 					icon: Scissors,
 				},
 				{
@@ -259,7 +271,8 @@
 				},
 				{
 					title: 'Assignment',
-					description: 'You may not assign or transfer these Terms without our prior written consent. We may assign our rights and obligations without restriction.',
+					description:
+						'You may not assign or transfer these Terms without our prior written consent. We may assign our rights and obligations without restriction.',
 					icon: ArrowRightLeft,
 				},
 				{
@@ -277,7 +290,8 @@
 			items: [
 				{
 					title: 'Free Trial Terms',
-					description: 'Free trials are limited to one per client and may be revoked at any time. Features may be limited during the trial period.',
+					description:
+						'Free trials are limited to one per client and may be revoked at any time. Features may be limited during the trial period.',
 					icon: Clock,
 				},
 				{
@@ -288,7 +302,8 @@
 				},
 				{
 					title: 'Support Terms',
-					description: 'Support levels vary by subscription tier. Premium support is available for higher-tier plans. Response times are estimates and not guaranteed.',
+					description:
+						'Support levels vary by subscription tier. Premium support is available for higher-tier plans. Response times are estimates and not guaranteed.',
 					icon: LifeBuoy,
 				},
 				{
@@ -301,6 +316,7 @@
 		}} />
 
 	<Prose title="Contact"
-		>If you have any questions about these Terms of Service, please contact us at <Button variant="link" href="mailto:help@polumeyv.com">help@polumeyv.com</Button
+		>If you have any questions about these Terms of Service, please contact us at <Button variant="link" href="mailto:help@polumeyv.com"
+			>help@polumeyv.com</Button
 		>.</Prose>
 </div>
