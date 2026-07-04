@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import { initTheme } from '@polumeyv/ui/components/theme-toggle';
-	import { Footer, Header } from '@polumeyv/ui/layout';
+	import { Footer, Header } from '@polumeyv/ui/blocks';
 	import { page } from '$app/state';
 
 	const navLinks = [

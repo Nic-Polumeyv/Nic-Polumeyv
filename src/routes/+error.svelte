@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ErrorPage } from '@polumeyv/ui/layout';
+	import { ErrorPage } from '@polumeyv/ui/blocks';
 	import { page } from '$app/state';
 </script>
 
