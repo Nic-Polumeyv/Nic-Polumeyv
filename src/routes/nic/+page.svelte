@@ -168,8 +168,7 @@
 							initialDelay={0.3}
 							morphDuration={1.2}
 							start={step === 'morphing' || step === 'revealing'}
-							onComplete={onMorphComplete}
-							class="font-black!" />
+							onComplete={onMorphComplete} />
 					{/if}
 				</div>
 

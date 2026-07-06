@@ -12,11 +12,9 @@
 		morphDuration = 1.5,
 		start = true,
 		onComplete,
-		class: className = '',
 	}: {
 		texts: string[];
 		children?: Snippet;
-		class?: string;
 		/** Seconds before morphing begins. */
 		initialDelay?: number;
 		/** How long the morph transition takes, in seconds. */
@@ -158,7 +156,7 @@
 	});
 </script>
 
-<div class="relative leading-none font-black transition-[filter] duration-200 text-4xl md:text-6xl lg:text-7xl {className}" style:filter={morphFilter}>
+<div class="relative leading-none font-black transition-[filter] duration-200 text-4xl md:text-6xl lg:text-7xl" style:filter={morphFilter}>
 	{#each texts as text}
 		<span class="block invisible h-0 whitespace-nowrap" aria-hidden="true">{text}</span>
 	{/each}
