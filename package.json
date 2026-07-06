@@ -7,7 +7,7 @@
 		"build": "bunx --bun vite build",
 		"preview": "bunx --bun vite preview",
 		"sync": "bunx svelte-kit sync",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+		"check": "svelte-kit sync && svelte-check --workspace src --tsconfig ../tsconfig.json"
 	},
 	"dependencies": {
 		"@polumeyv/ui": "catalog:ui",

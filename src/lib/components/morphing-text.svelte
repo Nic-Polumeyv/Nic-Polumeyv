@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onDestroy } from 'svelte';
 	import type { Snippet } from 'svelte';
-	import { useId } from '$lib/internal/use-id.js';
 
 	const COOLDOWN = 0.5;
 	const MAX_BLUR = 100;
@@ -13,9 +12,11 @@
 		morphDuration = 1.5,
 		start = true,
 		onComplete,
+		class: className = '',
 	}: {
 		texts: string[];
 		children?: Snippet;
+		class?: string;
 		/** Seconds before morphing begins. */
 		initialDelay?: number;
 		/** How long the morph transition takes, in seconds. */
@@ -26,7 +27,7 @@
 		onComplete?: () => void;
 	} = $props();
 
-	const filterId = useId();
+	const filterId = $props.id();
 
 	let textIndex = 0;
 	let morph = 0;
@@ -157,7 +158,7 @@
 	});
 </script>
 
-<div class="relative leading-none font-black transition-[filter] duration-200 text-4xl md:text-6xl lg:text-7xl" style:filter={morphFilter}>
+<div class="relative leading-none font-black transition-[filter] duration-200 text-4xl md:text-6xl lg:text-7xl {className}" style:filter={morphFilter}>
 	{#each texts as text}
 		<span class="block invisible h-0 whitespace-nowrap" aria-hidden="true">{text}</span>
 	{/each}
