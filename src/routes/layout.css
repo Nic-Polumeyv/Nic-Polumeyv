@@ -1,6 +1,15 @@
 @import 'tailwindcss';
 @import '@polumeyv/ui/styles';
-@source '../../node_modules/@polumeyv/ui/src/lib';
+@source '../../node_modules/@polumeyv/ui/src/lib/blocks';
+@source '../../node_modules/@polumeyv/ui/src/lib/components/badge';
+@source '../../node_modules/@polumeyv/ui/src/lib/components/button';
+@source '../../node_modules/@polumeyv/ui/src/lib/components/card';
+@source '../../node_modules/@polumeyv/ui/src/lib/components/item';
+@source '../../node_modules/@polumeyv/ui/src/lib/components/separator';
+@source '../../node_modules/@polumeyv/ui/src/lib/components/theme-toggle';
+@source '../../node_modules/@polumeyv/ui/src/lib/components/toggle';
+@source '../../node_modules/@polumeyv/ui/src/lib/hooks';
+@source '../../node_modules/@polumeyv/ui/src/lib/internal';
 @import '@fontsource-variable/inter';
 
 @custom-variant dark (&:is(.dark *));
