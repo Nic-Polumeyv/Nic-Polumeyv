@@ -6,24 +6,18 @@
 		"dev": "fuser -k 3000/tcp 2>/dev/null && sleep 1; bunx svelte-kit sync && bunx --bun vite dev",
 		"build": "bunx --bun vite build",
 		"preview": "bunx --bun vite preview",
-		"sync": "bunx svelte-kit sync",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
 	},
 	"dependencies": {
-		"@polumeyv/ui": "catalog:ui",
-		"@polumeyv/utilities": "catalog:infra"
+		"@polumeyv/ui": "catalog:ui"
 	},
 	"devDependencies": {
 		"@fontsource-variable/inter": "catalog:styling",
 		"@lucide/svelte": "catalog:ui",
-		"@stripe/stripe-js": "catalog:infra",
 		"@sveltejs/kit": "catalog:",
 		"@sveltejs/vite-plugin-svelte": "catalog:",
 		"@sveltejs/adapter-static": "catalog:",
 		"@tailwindcss/vite": "catalog:styling",
-		"@tanstack/table-core": "catalog:ui",
-		"d3-scale": "catalog:ui",
-		"layerchart": "catalog:ui",
 		"svelte": "catalog:",
 		"svelte-check": "catalog:",
 		"tailwindcss": "catalog:styling",
