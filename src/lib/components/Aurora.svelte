@@ -10,8 +10,6 @@
 	let { showRadialGradient = true, children, ...restProps }: Props = $props();
 </script>
 
-absolute! inset-0 h-full! z-0! bg-transparent! dark:bg-transparent!
-
 <div
 	class="flex flex-col items-center justify-center text-slate-950 transition-bg absolute! inset-0 h-full! z-0! bg-transparent! dark:bg-transparent!"
 	{...restProps}>

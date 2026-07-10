@@ -22,7 +22,6 @@
 		staticity = 50,
 		ease = 50,
 		size = 0.4,
-		color = '#ffffff',
 		vx = 0,
 		vy = 0,
 	}: {
@@ -31,7 +30,6 @@
 		staticity?: number;
 		ease?: number;
 		size?: number;
-		color?: string;
 		vx?: number;
 		vy?: number;
 	} = $props();
