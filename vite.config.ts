@@ -5,6 +5,7 @@ import { defineConfig, searchForWorkspaceRoot } from 'vite';
 import pkg from './package.json' with { type: 'json' };
 
 export default defineConfig({
+	css: { lightningcss: { errorRecovery: true } },
 	envDir: '../../../',
 	define: { __APP_VERSION__: JSON.stringify(pkg.version) },
 	plugins: [
