@@ -113,7 +113,7 @@
 			out:panelSlide={{ duration: isMobile.current ? 350 : 400, mobile: isMobile.current, easing: cubicIn }}
 			class="absolute bg-background/95 backdrop-blur-xl border-border overflow-y-auto
 				max-md:bottom-0 max-md:inset-x-0 max-md:h-[95vh] max-md:rounded-t-3xl max-md:border-t
-				md:top-0 md:right-0 md:bottom-0 md:w-[62vw] md:max-w-4xl md:border-l md:[transform-origin:right_center] md:[perspective:800px]">
+				md:top-0 md:right-0 md:bottom-0 md:w-[62vw] md:max-w-4xl md:border-l md:origin-[right_center] md:perspective-midrange">
 			<!-- Close button -->
 			<button
 				in:spinScale={{ duration: 600, delay: 200, easing: backOut }}
