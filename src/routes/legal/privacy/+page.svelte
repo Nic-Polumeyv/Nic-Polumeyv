@@ -58,7 +58,7 @@
 					title: 'Cookies & Tracking',
 					description: 'We use cookies and similar technologies to collect and store information about your interactions with our website.',
 					icon: Cookie,
-					link: { href: resolve('/legal/cookies'), text: 'See our Cookie Policy' },
+					link: { href: resolve('legal/cookies'), text: 'See our Cookie Policy' },
 				},
 			],
 		}} />

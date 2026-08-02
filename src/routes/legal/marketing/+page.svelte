@@ -88,7 +88,7 @@
 	<Prose title="Data Usage">
 		Your contact information will never be sold or shared with third parties for their marketing purposes. For full details on how we handle your data, see our <Button
 			variant="link"
-			href={resolve('/legal/privacy')}>Privacy Policy</Button
+			href={resolve('legal/privacy')}>Privacy Policy</Button
 		>.
 	</Prose>
 

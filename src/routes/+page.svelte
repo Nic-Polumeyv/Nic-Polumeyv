@@ -13,13 +13,13 @@
 	import Home from '@lucide/svelte/icons/home';
 	import { Browser } from '@polumeyv/ui/blocks/mockups';
 	import Check from '@lucide/svelte/icons/check';
-	import GradientWaveText from '$lib/components/gradient-wave-text.svelte';
-	import SchedulingVisual from '$lib/visuals/SchedulingVisual.svelte';
-	import ClientManagementVisual from '$lib/visuals/ClientManagementVisual.svelte';
-	import DashboardVisual from '$lib/visuals/DashboardVisual.svelte';
-	import WorkflowVisual from '$lib/visuals/WorkflowVisual.svelte';
-	import AIVisual from '$lib/visuals/AIVisual.svelte';
-	import MultiTeamVisual from '$lib/visuals/MultiTeamVisual.svelte';
+	import GradientWaveText from '#lib/components/gradient-wave-text.svelte';
+	import SchedulingVisual from '#lib/visuals/SchedulingVisual.svelte';
+	import ClientManagementVisual from '#lib/visuals/ClientManagementVisual.svelte';
+	import DashboardVisual from '#lib/visuals/DashboardVisual.svelte';
+	import WorkflowVisual from '#lib/visuals/WorkflowVisual.svelte';
+	import AIVisual from '#lib/visuals/AIVisual.svelte';
+	import MultiTeamVisual from '#lib/visuals/MultiTeamVisual.svelte';
 
 	const business = [
 		{

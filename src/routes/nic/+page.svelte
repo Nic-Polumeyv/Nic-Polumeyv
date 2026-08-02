@@ -8,17 +8,17 @@
 	import { Badge } from '@polumeyv/ui/components/badge';
 	import { Button } from '@polumeyv/ui/components/button';
 	import { scrollReveal } from '@polumeyv/ui/hooks';
-	import MorphingText from '$lib/components/morphing-text.svelte';
+	import MorphingText from '#lib/components/morphing-text.svelte';
 	import MailIcon from '@lucide/svelte/icons/mail';
 	import PhoneIcon from '@lucide/svelte/icons/phone';
 	import MessageCircleIcon from '@lucide/svelte/icons/message-circle';
 	import SunIcon from '@lucide/svelte/icons/sun';
 	import MoonIcon from '@lucide/svelte/icons/moon';
 	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
-	import Particles from '$lib/components/Particles.svelte';
-	import Aurora from '$lib/components/Aurora.svelte';
-	import WalkingBorder from '$lib/components/WalkingBorder.svelte';
-	import ProjectPanel from '$lib/components/ProjectPanel.svelte';
+	import Particles from '#lib/components/Particles.svelte';
+	import Aurora from '#lib/components/Aurora.svelte';
+	import WalkingBorder from '#lib/components/WalkingBorder.svelte';
+	import ProjectPanel from '#lib/components/ProjectPanel.svelte';
 
 	const theme = getTheme();
 	let isDarkMode = $derived(theme.current !== 'light');

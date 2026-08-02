@@ -8,7 +8,7 @@ let { children } = $props();
 
 {#if !(page.url.pathname === '/legal' || page.url.pathname === '/legal/')}
 	<div class="w-full pt-8 pb-8 md:pt-12 md:pb-12 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20">
-		<Button variant="ghost" href={resolve('/legal')} class="mb-6 lg:mb-8 inline-flex items-center gap-1!">
+		<Button variant="ghost" href={resolve('legal')} class="mb-6 lg:mb-8 inline-flex items-center gap-1!">
 			<ArrowLeft />
 			Back to Legal
 		</Button>
