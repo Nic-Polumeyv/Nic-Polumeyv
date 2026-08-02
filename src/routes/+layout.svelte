@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asset } from '$app/paths';
 	import './layout.css';
 	import { initTheme } from '@polumeyv/ui/components/theme-toggle';
 	import { Footer, Header } from '@polumeyv/ui/blocks';
@@ -23,9 +24,9 @@
 
 <svelte:head>
 	<title>Polumeyv</title>
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="icon" href="/favicon.ico" sizes="48x48" />
-	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/svg+xml" href={asset('favicon.svg')} />
+	<link rel="icon" href={asset('favicon.ico')} sizes="48x48" />
+	<link rel="apple-touch-icon" href={asset('apple-touch-icon.png')} />
 </svelte:head>
 
 <Header
