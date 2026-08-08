@@ -21,15 +21,9 @@ export default defineConfig({
 			},
 			experimental: {
 				remoteFunctions: true,
-				// no explicitEnvironmentVariables: this app declares no env vars (no src/env.ts), and the flag
-				// makes the static fallback eagerly import /_app/env.js — a module only a server runtime serves,
-				// so the deployed SPA fallback answered it with index.html (MIME error, site down).
-			},
-			typescript: {
-				config: (c) => {
-					c.extends = '../../../../tsconfig.json';
-					c.compilerOptions.types = ['bun'];
-				},
+				// No src/env.ts on purpose: explicit env vars make the static fallback eagerly import
+				// /_app/env.js — a module only a server runtime serves — so the deployed SPA fallback
+				// answered it with index.html (MIME error, site down).
 			},
 			compilerOptions: {
 				experimental: {

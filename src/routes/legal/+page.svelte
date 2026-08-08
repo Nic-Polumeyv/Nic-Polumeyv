@@ -19,28 +19,28 @@ const policies = [
 	{
 		title: 'Privacy Policy',
 		description: 'Learn how we collect, use, and protect your personal information.',
-		href: resolve('/legal/privacy'),
+		href: resolve('legal/privacy'),
 		iconComponent: User,
 		lastUpdated: 'January 15, 2025',
 	},
 	{
 		title: 'Terms of Service',
 		description: 'Our legal agreement governing the use of our services and platform.',
-		href: resolve('/legal/terms'),
+		href: resolve('legal/terms'),
 		iconComponent: Check,
 		lastUpdated: 'January 15, 2025',
 	},
 	{
 		title: 'Cookie Policy',
 		description: 'Understand how we use cookies and similar tracking technologies.',
-		href: resolve('/legal/cookies'),
+		href: resolve('legal/cookies'),
 		iconComponent: BarChart3,
 		lastUpdated: 'January 15, 2025',
 	},
 	{
 		title: 'Marketing',
 		description: 'Manage your marketing communication preferences and subscriptions.',
-		href: resolve('/legal/marketing'),
+		href: resolve('legal/marketing'),
 		iconComponent: Mail,
 		lastUpdated: 'January 15, 2025',
 	},
@@ -50,56 +50,56 @@ const importantInfo = [
 	{
 		title: 'Your Rights',
 		description: 'Access, correct, delete your data, opt out of marketing, and request data portability.',
-		href: resolve('/legal/privacy') + '#your-rights',
+		href: resolve('legal/privacy') + '#your-rights',
 		linkText: 'View your privacy rights',
 		iconComponent: Shield,
 	},
 	{
 		title: 'Data Protection',
 		description: 'Industry-standard security including encryption, access controls, and regular audits.',
-		href: resolve('/legal/privacy'),
+		href: resolve('legal/privacy'),
 		linkText: 'Learn more in our Privacy Policy',
 		iconComponent: Lock,
 	},
 	{
 		title: 'Third-Party Services',
 		description: 'We use trusted partners like Stripe for payments and Telnyx for SMS.',
-		href: resolve('/legal/privacy') + '#third-party',
+		href: resolve('legal/privacy') + '#third-party',
 		linkText: 'View third-party details',
 		iconComponent: Users,
 	},
 	{
 		title: 'Billing & Refunds',
 		description: 'Subscription billing, cancellation policies, and refund information.',
-		href: resolve('/legal/terms') + '#subscriptions',
+		href: resolve('legal/terms') + '#subscriptions',
 		linkText: 'View payment terms',
 		iconComponent: CreditCard,
 	},
 	{
 		title: 'Data Retention',
 		description: 'How long we keep your data and what happens when you close your account.',
-		href: resolve('/legal/privacy') + '#data-retention',
+		href: resolve('legal/privacy') + '#data-retention',
 		linkText: 'View retention periods',
 		iconComponent: Clock,
 	},
 	{
 		title: 'Cookie Control',
 		description: 'Manage cookies and tracking technologies through your browser settings.',
-		href: resolve('/legal/cookies') + '#control-cookies',
+		href: resolve('legal/cookies') + '#control-cookies',
 		linkText: 'Learn how to control cookies',
 		iconComponent: Cookie,
 	},
 	{
 		title: "Children's Privacy",
 		description: 'Our services are for users 18 and older. We do not collect data from minors.',
-		href: resolve('/legal/privacy') + '#children',
+		href: resolve('legal/privacy') + '#children',
 		linkText: 'View age requirements',
 		iconComponent: Baby,
 	},
 	{
 		title: 'Policy Updates',
 		description: "We'll notify you of material changes via email or platform notifications.",
-		href: resolve('/legal/marketing') + '#opt-out',
+		href: resolve('legal/marketing') + '#opt-out',
 		linkText: 'Manage notifications',
 		iconComponent: Bell,
 	},
@@ -155,6 +155,6 @@ const importantInfo = [
 
 	<div class="flex flex-col items-center gap-3 py-4">
 		<p class="text-foreground-muted">Have questions about our policies?</p>
-		<Button href={resolve('/contact')}>Contact Us Directly</Button>
+		<Button href={resolve('contact')}>Contact Us Directly</Button>
 	</div>
 </div>

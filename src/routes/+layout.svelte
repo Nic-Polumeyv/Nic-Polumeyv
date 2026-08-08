@@ -1,31 +1,39 @@
 <script lang="ts">
+	import { asset, resolve } from '$app/paths';
+	import { beforeNavigate } from '$app/navigation';
 	import './layout.css';
 	import { initTheme } from '@polumeyv/ui/components/theme-toggle';
 	import { Footer, Header } from '@polumeyv/ui/blocks';
-	import { page } from '$app/state';
+	import { page, updated } from '$app/state';
 
 	const navLinks = [
-		{ label: 'Nic', href: '/nic' },
-		{ label: 'Contact', href: '/contact' },
+		{ label: 'Nic', href: resolve('nic') },
+		{ label: 'Contact', href: resolve('contact') },
 	];
 
 	const legalLinks = [
-		{ label: 'Privacy', href: '/legal/privacy' },
-		{ label: 'Terms', href: '/legal/terms' },
-		{ label: 'Cookies', href: '/legal/cookies' },
-		{ label: 'Marketing', href: '/legal/marketing' },
+		{ label: 'Privacy', href: resolve('legal/privacy') },
+		{ label: 'Terms', href: resolve('legal/terms') },
+		{ label: 'Cookies', href: resolve('legal/cookies') },
+		{ label: 'Marketing', href: resolve('legal/marketing') },
 	];
 
 	let { children } = $props();
 
 	initTheme();
+
+	beforeNavigate(({ willUnload, to }) => {
+		if (updated.current && !willUnload && to?.url) {
+			location.href = to.url.href;
+		}
+	});
 </script>
 
 <svelte:head>
 	<title>Polumeyv</title>
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="icon" href="/favicon.ico" sizes="48x48" />
-	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/svg+xml" href={asset('favicon.svg')} />
+	<link rel="icon" href={asset('favicon.ico')} sizes="48x48" />
+	<link rel="apple-touch-icon" href={asset('apple-touch-icon.png')} />
 </svelte:head>
 
 <Header

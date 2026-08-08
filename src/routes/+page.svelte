@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import * as Item from '@polumeyv/ui/components/item';
 	import { Button } from '@polumeyv/ui/components/button';
 	import Scale from '@lucide/svelte/icons/scale';
@@ -13,13 +14,13 @@
 	import Home from '@lucide/svelte/icons/home';
 	import { Browser } from '@polumeyv/ui/blocks/mockups';
 	import Check from '@lucide/svelte/icons/check';
-	import GradientWaveText from '$lib/components/gradient-wave-text.svelte';
-	import SchedulingVisual from '$lib/visuals/SchedulingVisual.svelte';
-	import ClientManagementVisual from '$lib/visuals/ClientManagementVisual.svelte';
-	import DashboardVisual from '$lib/visuals/DashboardVisual.svelte';
-	import WorkflowVisual from '$lib/visuals/WorkflowVisual.svelte';
-	import AIVisual from '$lib/visuals/AIVisual.svelte';
-	import MultiTeamVisual from '$lib/visuals/MultiTeamVisual.svelte';
+	import GradientWaveText from '#lib/components/gradient-wave-text.svelte';
+	import SchedulingVisual from '#lib/visuals/SchedulingVisual.svelte';
+	import ClientManagementVisual from '#lib/visuals/ClientManagementVisual.svelte';
+	import DashboardVisual from '#lib/visuals/DashboardVisual.svelte';
+	import WorkflowVisual from '#lib/visuals/WorkflowVisual.svelte';
+	import AIVisual from '#lib/visuals/AIVisual.svelte';
+	import MultiTeamVisual from '#lib/visuals/MultiTeamVisual.svelte';
 
 	const business = [
 		{
@@ -96,8 +97,8 @@
 			Automate Your <span class="inline-flex"><GradientWaveText once={false} delay={3} triggerOnView>Business.</GradientWaveText></span>
 		</h1>
 		<div class="flex flex-wrap justify-center md:justify-start gap-3 animate-[fade-up_1.0s_ease-out_1.8s_both]">
-			<Button href="/contact" size="lg">Get Started</Button>
-			<Button href="/nic" variant="outline" size="lg">Learn More</Button>
+			<Button href={resolve('contact')} size="lg">Get Started</Button>
+			<Button href={resolve('nic')} variant="outline" size="lg">Learn More</Button>
 		</div>
 	</div>
 </section>
