@@ -31,9 +31,7 @@ export default defineConfig({
 				},
 			},
 			// Force runes mode for the project, except for libraries. Can be removed in svelte 6.
-			vitePlugin: {
-				dynamicCompileOptions: ({ filename }) => (filename.split(/[/\\]/).includes('node_modules') ? undefined : { runes: true }),
-			},
+			dynamicCompileOptions: ({ filename }) => (filename.split(/[/\\]/).includes('node_modules') ? undefined : { runes: true }),
 		}),
 	],
 	server: { port: 3000, strictPort: true, fs: { allow: [searchForWorkspaceRoot(process.cwd())] } },
