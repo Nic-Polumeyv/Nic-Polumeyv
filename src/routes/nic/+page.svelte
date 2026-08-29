@@ -401,7 +401,7 @@
 
 <style>
 	:global(nav.sticky) {
-		background: hsl(var(--background) / 0.3) !important;
+		background: color-mix(in oklab, var(--background) 30%, transparent) !important;
 	}
 
 	/* Mobile-first: text slides down from top, image slides up from bottom. */

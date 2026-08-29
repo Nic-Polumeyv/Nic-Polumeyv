@@ -24,27 +24,25 @@
 @theme inline {
 	--animate-aurora: aurora 60s linear infinite;
 	--animate-marquee: marquee 20s linear infinite;
-}
-
-@keyframes marquee {
-	from {
-		transform: translateX(0);
+	@keyframes marquee {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-33.333%);
+		}
 	}
-	to {
-		transform: translateX(-33.333%);
-	}
-}
-
-@keyframes aurora {
-	from {
-		background-position:
-			50% 50%,
-			50% 50%;
-	}
-	to {
-		background-position:
-			350% 50%,
-			350% 50%;
+	@keyframes aurora {
+		from {
+			background-position:
+				50% 50%,
+				50% 50%;
+		}
+		to {
+			background-position:
+				350% 50%,
+				350% 50%;
+		}
 	}
 }
 
