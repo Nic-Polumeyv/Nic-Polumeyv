@@ -12,8 +12,6 @@
 @source '../../node_modules/@polumeyv/ui/src/lib/internal';
 @import '@fontsource-variable/inter';
 
-@custom-variant dark (&:is(.dark *));
-
 @keyframes fade-up {
 	from {
 		opacity: 0;
