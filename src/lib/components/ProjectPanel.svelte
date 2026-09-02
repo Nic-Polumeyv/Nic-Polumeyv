@@ -5,7 +5,7 @@
 	import { Button } from '@polumeyv/ui/components/button';
 	import XIcon from '@lucide/svelte/icons/x';
 	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
-	import { isMobile } from '@polumeyv/ui/hooks';
+	import { isMobile } from 'handful';
 	import { getTheme } from '@polumeyv/ui/components/theme-toggle';
 
 	type Project = {

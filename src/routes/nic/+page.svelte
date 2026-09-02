@@ -7,7 +7,7 @@
 	import * as Toggle from '@polumeyv/ui/components/toggle';
 	import { Badge } from '@polumeyv/ui/components/badge';
 	import { Button } from '@polumeyv/ui/components/button';
-	import { scrollReveal } from '@polumeyv/ui/hooks';
+	import { scrollReveal } from 'handful';
 	import MorphingText from '#lib/components/morphing-text.svelte';
 	import MailIcon from '@lucide/svelte/icons/mail';
 	import PhoneIcon from '@lucide/svelte/icons/phone';

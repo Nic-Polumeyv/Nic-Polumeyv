@@ -9,7 +9,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
 	},
 	"dependencies": {
-		"@polumeyv/ui": "catalog:ui"
+		"@polumeyv/ui": "catalog:ui",
+		"handful": "catalog:ui"
 	},
 	"devDependencies": {
 		"@fontsource-variable/inter": "catalog:styling",
