@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
 	import { cubicOut, cubicIn, backOut } from 'svelte/easing';
-	import { Badge } from '@polumeyv/ui/components/badge';
-	import { Button } from '@polumeyv/ui/components/button';
+	import { Badge } from 'sheer-ui/components/badge';
+	import { Button } from 'sheer-ui/components/button';
 	import XIcon from '@lucide/svelte/icons/x';
 	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
 	import { isMobile } from 'handful';
-	import { getTheme } from '@polumeyv/ui/components/theme-toggle';
+	import { getTheme } from 'sheer-ui/components/theme-toggle';
 
 	type Project = {
 		title: string;

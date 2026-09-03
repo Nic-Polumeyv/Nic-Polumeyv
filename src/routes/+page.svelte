@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import * as Item from '@polumeyv/ui/components/item';
-	import { Button } from '@polumeyv/ui/components/button';
+	import * as Item from 'sheer-ui/components/item';
+	import { Button } from 'sheer-ui/components/button';
 	import Scale from '@lucide/svelte/icons/scale';
 	import Scissors from '@lucide/svelte/icons/scissors';
 	import UtensilsCrossed from '@lucide/svelte/icons/utensils-crossed';
@@ -12,7 +12,7 @@
 	import Coffee from '@lucide/svelte/icons/coffee';
 	import Award from '@lucide/svelte/icons/award';
 	import Home from '@lucide/svelte/icons/home';
-	import { Browser } from '@polumeyv/ui/blocks/mockups';
+	import { Browser } from 'sheer-ui/blocks/mockups';
 	import Check from '@lucide/svelte/icons/check';
 	import GradientWaveText from '#lib/components/gradient-wave-text.svelte';
 	import SchedulingVisual from '#lib/visuals/SchedulingVisual.svelte';

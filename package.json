@@ -9,7 +9,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
 	},
 	"dependencies": {
-		"@polumeyv/ui": "catalog:ui",
+		"sheer-ui": "catalog:ui",
 		"handful": "catalog:ui"
 	},
 	"devDependencies": {

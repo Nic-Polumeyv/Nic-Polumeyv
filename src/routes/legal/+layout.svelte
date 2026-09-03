@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Button } from '@polumeyv/ui/components/button';
+import { Button } from 'sheer-ui/components/button';
 import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 import { page } from '$app/state';
 import { resolve } from '$app/paths';

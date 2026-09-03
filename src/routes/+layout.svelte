@@ -2,8 +2,8 @@
 	import { asset, resolve } from '$app/paths';
 	import { beforeNavigate } from '$app/navigation';
 	import './layout.css';
-	import { initTheme } from '@polumeyv/ui/components/theme-toggle';
-	import { Footer, Header } from '@polumeyv/ui/blocks';
+	import { initTheme } from 'sheer-ui/components/theme-toggle';
+	import { Footer, Header } from 'sheer-ui/blocks';
 	import { page, updated } from '$app/state';
 
 	const navLinks = [

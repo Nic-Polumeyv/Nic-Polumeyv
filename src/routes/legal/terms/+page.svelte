@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '@polumeyv/ui/components/button';
+	import { Button } from 'sheer-ui/components/button';
 	import Key from '@lucide/svelte/icons/key';
 	import UserCheck from '@lucide/svelte/icons/user-check';
 	import ShieldX from '@lucide/svelte/icons/shield-x';
