@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Item from '@polumeyv/ui/components/item';
+	import * as Item from 'sheer-ui/components/item';
 
 	let { title, meta, date }: { title: string; meta: string; date: string } = $props();
 </script>

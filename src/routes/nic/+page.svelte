@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { getTheme } from '@polumeyv/ui/components/theme-toggle';
+	import { getTheme } from 'sheer-ui/components/theme-toggle';
 
-	import * as Card from '@polumeyv/ui/components/card';
-	import * as Item from '@polumeyv/ui/components/item';
-	import { Separator } from '@polumeyv/ui/components/separator';
-	import * as Toggle from '@polumeyv/ui/components/toggle';
-	import { Badge } from '@polumeyv/ui/components/badge';
-	import { Button } from '@polumeyv/ui/components/button';
-	import { scrollReveal } from '@polumeyv/ui/hooks';
+	import * as Card from 'sheer-ui/components/card';
+	import * as Item from 'sheer-ui/components/item';
+	import { Separator } from 'sheer-ui/components/separator';
+	import * as Toggle from 'sheer-ui/components/toggle';
+	import { Badge } from 'sheer-ui/components/badge';
+	import { Button } from 'sheer-ui/components/button';
+	import { scrollReveal } from 'handful';
 	import MorphingText from '#lib/components/morphing-text.svelte';
 	import MailIcon from '@lucide/svelte/icons/mail';
 	import PhoneIcon from '@lucide/svelte/icons/phone';
@@ -401,7 +401,7 @@
 
 <style>
 	:global(nav.sticky) {
-		background: hsl(var(--background) / 0.3) !important;
+		background: color-mix(in oklab, var(--background) 30%, transparent) !important;
 	}
 
 	/* Mobile-first: text slides down from top, image slides up from bottom. */

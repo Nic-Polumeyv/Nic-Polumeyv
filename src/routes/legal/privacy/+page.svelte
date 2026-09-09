@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Item from '@polumeyv/ui/components/item';
-	import { Button } from '@polumeyv/ui/components/button';
+	import * as Item from 'sheer-ui/components/item';
+	import { Button } from 'sheer-ui/components/button';
 	import { resolve } from '$app/paths';
 	import User from '@lucide/svelte/icons/user';
 	import Database from '@lucide/svelte/icons/database';

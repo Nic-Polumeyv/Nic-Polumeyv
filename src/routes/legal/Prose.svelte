@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import * as Item from '@polumeyv/ui/components/item';
+	import * as Item from 'sheer-ui/components/item';
 
 	let { title, id, children }: { title: string; id?: string; children: Snippet } = $props();
 </script>

@@ -265,7 +265,7 @@
 <div
 	bind:this={containerRef}
 	{@attach setup}
-	class="walking-border-container"
+	class="relative"
 	style="
 		--walk-duration: {duration}s;
 		--fp-size: {CONFIG.footprints.size}px;
@@ -273,7 +273,7 @@
 		--fp-fade: {CONFIG.footprints.fadeTime}ms;
 	">
 	<div bind:this={walkerRef} class="walker" class:walker-ready={walkerReady} style={offsetPath ? `offset-path: path('${offsetPath}');` : ''}>
-		<div bind:this={footMarkerRef} class="foot-marker"></div>
+		<div bind:this={footMarkerRef} class="pointer-events-none absolute bottom-0 left-1/2 size-px"></div>
 		<svg class="stick-figure" viewBox="0 0 {figureWidth} {figureHeight}" width={figureWidth} height={figureHeight}>
 			<g bind:this={figureGroupRef}>
 				<line bind:this={backLegUpperRef} stroke="currentColor" stroke-width={CONFIG.walker.strokeWidth} stroke-linecap="round" />
@@ -290,21 +290,12 @@
 		</svg>
 	</div>
 
-	<div bind:this={contentRef} class="walking-border-content">
+	<div bind:this={contentRef} class="relative z-10">
 		{@render children?.()}
 	</div>
 </div>
 
 <style>
-	.walking-border-container {
-		position: relative;
-	}
-
-	.walking-border-content {
-		position: relative;
-		z-index: 10;
-	}
-
 	.walker {
 		position: absolute;
 		top: 0;
@@ -319,15 +310,6 @@
 
 	.walker.walker-ready {
 		opacity: 1;
-	}
-
-	.foot-marker {
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		width: 1px;
-		height: 1px;
-		pointer-events: none;
 	}
 
 	@keyframes walk-path {

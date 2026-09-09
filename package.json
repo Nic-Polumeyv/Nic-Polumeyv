@@ -9,12 +9,13 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
 	},
 	"dependencies": {
-		"@polumeyv/ui": "catalog:ui"
+		"sheer-ui": "catalog:ui",
+		"handful": "catalog:ui"
 	},
 	"devDependencies": {
 		"@fontsource-variable/inter": "catalog:styling",
 		"@lucide/svelte": "catalog:ui",
-		"@polumeyv/lib": "catalog:infra",
+		"@polumeyv/kit": "catalog:infra",
 		"@sveltejs/kit": "catalog:",
 		"@sveltejs/vite-plugin-svelte": "catalog:",
 		"@sveltejs/adapter-static": "catalog:",

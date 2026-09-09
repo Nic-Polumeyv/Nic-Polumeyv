@@ -1,7 +1,7 @@
 <script lang="ts">
-	import * as Item from '@polumeyv/ui/components/item';
-	import { Separator } from '@polumeyv/ui/components/separator';
-	import { Button } from '@polumeyv/ui/components/button';
+	import * as Item from 'sheer-ui/components/item';
+	import { Separator } from 'sheer-ui/components/separator';
+	import { Button } from 'sheer-ui/components/button';
 	import { resolve } from '$app/paths';
 	import Mail from '@lucide/svelte/icons/mail';
 	import MessageSquare from '@lucide/svelte/icons/message-square';

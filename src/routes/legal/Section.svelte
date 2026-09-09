@@ -1,7 +1,7 @@
 <script lang="ts">
-	import * as Item from '@polumeyv/ui/components/item';
-	import { Separator } from '@polumeyv/ui/components/separator';
-	import { Button } from '@polumeyv/ui/components/button';
+	import * as Item from 'sheer-ui/components/item';
+	import { Separator } from 'sheer-ui/components/separator';
+	import { Button } from 'sheer-ui/components/button';
 	import type { Component } from 'svelte';
 
 	/** One icon row within a section — a labelled paragraph with an optional trailing link. */

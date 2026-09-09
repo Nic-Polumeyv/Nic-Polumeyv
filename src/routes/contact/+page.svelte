@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Card from '@polumeyv/ui/components/card';
-	import { Button } from '@polumeyv/ui/components/button';
+	import * as Card from 'sheer-ui/components/card';
+	import { Button } from 'sheer-ui/components/button';
 	import Mail from '@lucide/svelte/icons/mail';
 	import Phone from '@lucide/svelte/icons/phone';
 </script>
