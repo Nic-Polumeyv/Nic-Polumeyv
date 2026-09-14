@@ -1,3 +1,1 @@
-### Nic Polumeyv
-
-I run Polumeyv LLC and can code
+I make really good whole wheat bread and I like to code.
