@@ -1,15 +1,14 @@
 @import 'tailwindcss';
 @import 'sheer-ui/styles';
-@source '../../node_modules/sheer-ui/src/lib/blocks';
-@source '../../node_modules/sheer-ui/src/lib/components/badge';
-@source '../../node_modules/sheer-ui/src/lib/components/button';
-@source '../../node_modules/sheer-ui/src/lib/components/card';
-@source '../../node_modules/sheer-ui/src/lib/components/item';
-@source '../../node_modules/sheer-ui/src/lib/components/separator';
-@source '../../node_modules/sheer-ui/src/lib/components/theme-toggle';
-@source '../../node_modules/sheer-ui/src/lib/components/toggle';
-@source '../../node_modules/sheer-ui/src/lib/hooks';
-@source '../../node_modules/sheer-ui/src/lib/internal';
+@source '../../node_modules/sheer-ui/dist/blocks';
+@source '../../node_modules/sheer-ui/dist/components/badge';
+@source '../../node_modules/sheer-ui/dist/components/button';
+@source '../../node_modules/sheer-ui/dist/components/card';
+@source '../../node_modules/sheer-ui/dist/components/item';
+@source '../../node_modules/sheer-ui/dist/components/separator';
+@source '../../node_modules/sheer-ui/dist/components/theme-toggle';
+@source '../../node_modules/sheer-ui/dist/components/toggle';
+@source '../../node_modules/sheer-ui/dist/internal';
 @import '@fontsource-variable/inter';
 
 @keyframes fade-up {
