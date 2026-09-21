@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import 'sheer-ui/styles';
+@import '../../node_modules/sheer-ui/src/lib/assets/ui.css';
 @source '../../node_modules/sheer-ui/src/lib/blocks';
 @source '../../node_modules/sheer-ui/src/lib/components/badge';
 @source '../../node_modules/sheer-ui/src/lib/components/button';
