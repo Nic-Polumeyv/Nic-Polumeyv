@@ -7,7 +7,7 @@
 	import { page, updated } from '$app/state';
 
 	const navLinks = [
-		{ label: 'Nic', href: resolve('nic') },
+		{ label: 'Services', href: resolve('services') },
 		{ label: 'Contact', href: resolve('contact') },
 	];
 
@@ -40,7 +40,7 @@
 	brand="Polumeyv"
 	brandHref="/"
 	{navLinks}
-	showBorder={page.url.pathname !== '/'}
+	showBorder={page.route.id !== '/services'}
 	mobileId="polumeyv-mobile-nav" />
 
 <div class="bg-background flex flex-col">
