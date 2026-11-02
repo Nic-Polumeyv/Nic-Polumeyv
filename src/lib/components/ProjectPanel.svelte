@@ -5,7 +5,6 @@
 	import { Button } from 'sheer-ui/components/button';
 	import XIcon from '@lucide/svelte/icons/x';
 	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
-	import { isMobile } from 'handful';
 	import { getTheme } from 'sheer-ui/components/theme-toggle';
 
 	type Project = {
@@ -31,16 +30,13 @@
 		onclose?: () => void;
 	} = $props();
 
-	// Custom transition: panel slides in with optional rotateY on desktop
-	function panelSlide(
-		node: HTMLElement,
-		{ duration = 500, easing = cubicOut, mobile = false }: { duration?: number; easing?: (t: number) => number; mobile?: boolean },
-	) {
+	// Only the progress is JS: the axis and the desktop rotateY live in the panel's `max-md:`/`md:` classes, so the
+	// breakpoint is CSS's alone.
+	function panelSlide(node: HTMLElement, { duration = 500, easing = cubicOut }: { duration?: number; easing?: (t: number) => number } = {}) {
 		return {
 			duration,
 			easing,
-			css: (t: number) =>
-				mobile ? `transform: translateY(${(1 - t) * 100}%)` : `transform: translateX(${(1 - t) * 100}%) rotateY(${(1 - t) * 12}deg)`,
+			css: (t: number) => `--slide: ${1 - t}`,
 		};
 	}
 
@@ -109,11 +105,11 @@
 
 		<!-- Panel -->
 		<div
-			in:panelSlide={{ duration: isMobile.current ? 500 : 600, mobile: isMobile.current, easing: cubicOut }}
-			out:panelSlide={{ duration: isMobile.current ? 350 : 400, mobile: isMobile.current, easing: cubicIn }}
+			in:panelSlide
+			out:panelSlide={{ duration: 350, easing: cubicIn }}
 			class="absolute bg-background/95 backdrop-blur-xl border-border overflow-y-auto
-				max-md:bottom-0 max-md:inset-x-0 max-md:h-[95vh] max-md:rounded-t-3xl max-md:border-t
-				md:top-0 md:right-0 md:bottom-0 md:w-[62vw] md:max-w-4xl md:border-l md:origin-[right_center] md:perspective-midrange">
+				max-md:bottom-0 max-md:inset-x-0 max-md:h-[95vh] max-md:rounded-t-3xl max-md:border-t max-md:translate-y-[calc(var(--slide)*100%)]
+				md:top-0 md:right-0 md:bottom-0 md:w-[62vw] md:max-w-4xl md:border-l md:origin-[right_center] md:perspective-midrange md:translate-x-[calc(var(--slide)*100%)] md:rotate-y-[calc(var(--slide)*12deg)]">
 			<!-- Close button -->
 			<button
 				in:spinScale={{ duration: 600, delay: 200, easing: backOut }}
